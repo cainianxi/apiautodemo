@@ -1,0 +1,28 @@
+test-case:  # 标志
+    评论_设政:
+        data:
+            text: "毛泽东"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    评论_色情:
+        data:
+            text: "约炮"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    评论_辱骂:
+        data:
+            text: "我操你妈"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    评论_广告:
+        data:
+            text: "需要兼职的私我哦 日赚百八十的没问题 私我了解详情"
+            signature: $(signature($data))
+        assert:
+            json-json: {}

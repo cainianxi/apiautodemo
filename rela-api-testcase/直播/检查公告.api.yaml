@@ -1,0 +1,12 @@
+test-case:  # 标志
+    检查公告--生产:
+        params:
+            key: hbXCpSFe3CaBo3QtffbUl3oxRTAn2tMm-106806610
+        assert:
+            json-json: {}
+
+    # 检查公告--测试:
+    #     params:
+    #         key: dWJSmQfJcZI0IbPdopiUUCwaJVwyXET6-106759850
+    #     assert:
+    #         json-json: {}

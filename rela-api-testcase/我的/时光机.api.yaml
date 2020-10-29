@@ -1,0 +1,9 @@
+test-case:  # 标志
+    时光机:
+        params:
+            key: "NUcXjqBLeLOsuwi9e96nn1Z6KB4LeQOb-102804363"
+            cursor: 0
+            limit: 20
+            signature: $(signature($params))
+        assert:
+            json-json: {}

@@ -1,0 +1,7 @@
+test-case:  # 标志
+    退出:
+        data:
+            signature: $(signature($data))
+            userId: 106806543
+            key: "JsOpHhv4lwUDJXfeaTjzEquzMGUHeP3R-106806543"
+        assert: {}

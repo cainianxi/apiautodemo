@@ -1,0 +1,26 @@
+test-case:  # 标志
+    直播列表:
+        params:
+            userAgent: "rela_live/1.0.1(iPhone X; iOS 13.50; zh-Hans; Wifi)"
+            clientVersion: "10001"
+            isMulti: "0"
+            audioType: "0"
+            classify: "5"
+            key: "4916964158868297873-106806610"
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    # 直播列表1:
+    #     params:
+    #         cursor: "20"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 直播列表2:
+    #     params:
+    #         cursor: "40"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}

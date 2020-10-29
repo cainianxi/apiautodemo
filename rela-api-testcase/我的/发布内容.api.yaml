@@ -1,0 +1,7 @@
+test-case:  # 标志
+    发布内容:
+        data:
+            key: "zadIBlfxIrkrfeC23kdPeqO9mYKuycRy-106806610"
+            momentsText: "😂 222222"
+            imageUrlList: "http://static.rela.me/app/timeline/109929689/8c4ea8c54d753b205ca780f25996939d*__*3840x5760.jpg"
+            signature: $(signature($data))

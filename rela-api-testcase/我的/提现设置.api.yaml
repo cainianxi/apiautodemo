@@ -1,0 +1,14 @@
+test-case:  # 标志
+    提现设置_未签约禁止提现:
+        params:
+            key: ${${login}['data']['key']}
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    # 提现设置_签约:
+    #     params:
+    #         key: XbgbNjty72fYdhRTrABzKqCKKN68qSWy-108920346
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}

@@ -1,0 +1,142 @@
+test-case:  # 标志
+    查看附近的人1:
+        params:
+            key: "DXT2lNMhp9Aj6INK6f1MKVzFSNr6Eb9v-101056823"
+            lat: "32.38176"
+            lng: "120.560898"
+            pageSize: 30
+            curPage: 1
+            recommendType: "lbs"
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+#
+    查看附近的人2:
+        params:
+            key: "DXT2lNMhp9Aj6INK6f1MKVzFSNr6Eb9v-101056823"
+            lat: "36.980193"
+            lng: "120.6711692"
+            pageSize: 30
+            curPage: 2
+            recommendType: "lbs"
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+#
+    查看附近的人3:
+        params:
+            key: "DXT2lNMhp9Aj6INK6f1MKVzFSNr6Eb9v-101056823"
+            lat: "36.980193"
+            lng: "120.6711692"
+            pageSize: 30
+            curPage: 3
+            recommendType: "lbs"
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+#
+#    查看附近的人4:
+#        params:
+#            key: "8q1Bt1G0IYfTYWMgbjSbQ5inGVt2uy8l-104912156"
+#            lat: "36.980193"
+#            lng: "120.6711692"
+#            pageSize: 20
+#            curPage: 4
+#            recommendType: "lbs"
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#
+#    查看附近的人5:
+#        params:
+#            key: "8q1Bt1G0IYfTYWMgbjSbQ5inGVt2uy8l-104912156"
+#            lat: "36.980193"
+#            lng: "120.6711692"
+#            pageSize: 20
+#            curPage: 5
+#            recommendType: "lbs"
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#    查看附近的人6:
+#        params:
+#            key: "8q1Bt1G0IYfTYWMgbjSbQ5inGVt2uy8l-104912156"
+#            lat: "36.980193"
+#            lng: "120.6711692"
+#            pageSize: 20
+#            curPage: 6
+#            recommendType: "lbs"
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+    # 查看附近的人3:
+    #     params:
+    #         key: "JekhMuh8y9620rpjFA9LIKDp5fPdGbyJ-104447138"
+    #         lat: "34.764735"
+    #         lng: "113.760219"
+    #         pageSize: 40
+    #         curPage: 3
+    #         recommendType: "lbs"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 查看附近的人4:
+    #     params:
+    #         key: "JekhMuh8y9620rpjFA9LIKDp5fPdGbyJ-104447138"
+    #         lat: "34.764735"
+    #         lng: "113.760219"
+    #         pageSize: 40
+    #         curPage: 4
+    #         recommendType: "lbs"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 查看附近的人5:
+    #     params:
+    #         key: "JekhMuh8y9620rpjFA9LIKDp5fPdGbyJ-104447138"
+    #         lat: "34.764735"
+    #         lng: "113.760219"
+    #         pageSize: 40
+    #         curPage: 5
+    #         recommendType: "lbs"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+    # 查看附近的人6:
+    #     params:
+    #         key: "JekhMuh8y9620rpjFA9LIKDp5fPdGbyJ-104447138"
+    #         lat: "34.764735"
+    #         lng: "113.760219"
+    #         pageSize: 40
+    #         curPage: 6
+    #         recommendType: "lbs"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+
+    # 查看附近的人7:
+    #     params:
+    #         key: "JekhMuh8y9620rpjFA9LIKDp5fPdGbyJ-104447138"
+    #         lat: "34.764735"
+    #         lng: "113.760219"
+    #         pageSize: 40
+    #         curPage: 7
+    #         recommendType: "lbs"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 查看附近的人8:
+    #     params:
+    #         key: "JekhMuh8y9620rpjFA9LIKDp5fPdGbyJ-104447138"
+    #         lat: "34.764735"
+    #         lng: "113.760219"
+    #         pageSize: 40
+    #         curPage: 7
+    #         recommendType: "lbs"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}

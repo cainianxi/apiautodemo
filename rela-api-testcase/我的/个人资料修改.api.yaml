@@ -1,0 +1,11 @@
+test-case:  # 标志
+    修改用户基础信息:
+        data:
+            key: ${${login}['data']['key']}
+            nickName: "测试习大大"
+            occupation: "QA测试"
+            livecity: "在上海测试"
+            intro: "测试描述过数美"
+            signature: $(signature($data))
+        assert:
+            json-json: {}

@@ -1,0 +1,8 @@
+test-case:  # 标志
+    查找用户--生产:
+        params:
+            key: ZCmZz9lHMAhCn6eUSZmlVmMfmwPw3a06-104816577
+            keyWord: 阿非
+            signature: $(signature($params))
+        assert:
+            json-json: {}

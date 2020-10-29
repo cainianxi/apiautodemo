@@ -1,0 +1,27 @@
+test-case:  # 标志
+    userId不存在:  # 测试用例名称
+        data:
+            key: ~
+        assert:
+            json-json: {"errcode": "require_login"}
+
+    不存在的userId:
+        data:
+            key: "1234567"
+        assert:
+            json-json: {"errcode": "require_login"}
+
+    无关注主播直播:
+        data:
+            key: ${${login}['data']['key']}
+        assert:
+            json-json: {"errcode":"", "list":[]}
+
+#    有关注主播直播:
+#        设置直播主播  api, 开启直播
+#        setup:
+#
+#        data:
+#            key: ${${login}['data']['key']}
+#        assert:
+#            json-json: {"errcode":""}

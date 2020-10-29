@@ -1,0 +1,18 @@
+#var:  # 变量标志
+#    a: 1
+#    b: 2
+
+#api对接登录:  # 接口名
+#    setup:  # 前置
+#        sql:  #  前置为sql
+#        function: $(sleep(3))  # 前置为函数
+#        api:  # 前置为 api 接口
+#关注的主播列表:
+#    setup:  # 单接口前置条件
+#        api:  # api前置
+#            - 登录:
+#                headers:
+#                    signature: $(test_demo("12345"))
+#                data:
+#                    cell: "19999999177"
+#                output: login  # 保存变量

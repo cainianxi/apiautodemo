@@ -1,0 +1,122 @@
+test-case:  # 标志
+    我的日志列表:
+        params:
+            key: "6yZ4Cx8opW31tx3rkyBJtnO79JL6Q6nK-109010890"
+            signature: $(signature($params))
+            userId: "101278260"
+            pageSize: 20
+            curPage: 1
+            mainType: "moments"
+        assert:
+            json-json: {}
+
+    # 我的日志列表1:
+    #     params:
+    #         # lDMBg9ebnBgMmTWAssnWny1CIhQ4nvmR-104704298
+    #         # nRrOvnEoemeJ4yLL7Qk5BG7A5dySSywN-104529167
+    #         # xYuDOoqYcnTb6hAiStzAu4XsYyA1WOVE-106906327
+    #         # GwEF35rMoku7CqYb8jU6eHaGHN6yh9RC-106806610
+    #         # ZZMuMt3GiIBhGsP9NxqPHeTdz2fl32pX-101213436
+    #         # AtZVmiEyhvQlX9YFkB1Q48QpQUJmfw23-100297413
+    #         # LJNqobu9RSwSDNPcNYR4QUnuDz4BLWrg-105083929
+    #         key: "psgcaLvlPhFj45hJS0IoU4xMT70Hm7QY-3568"
+    #         signature: $(signature($params))
+    #         userId: "3568"
+    #         pageSize: 20
+    #         curPage: 1
+    #         mainType: "moments"
+    #     assert:
+    #         json-json: {}
+            
+    # 我的日志列表2:
+    #     params:
+    #         # lDMBg9ebnBgMmTWAssnWny1CIhQ4nvmR-104704298
+    #         # nRrOvnEoemeJ4yLL7Qk5BG7A5dySSywN-104529167
+    #         # xYuDOoqYcnTb6hAiStzAu4XsYyA1WOVE-106906327
+    #         # GwEF35rMoku7CqYb8jU6eHaGHN6yh9RC-106806610
+    #         # ZZMuMt3GiIBhGsP9NxqPHeTdz2fl32pX-101213436
+    #         # AtZVmiEyhvQlX9YFkB1Q48QpQUJmfw23-100297413
+    #         # LJNqobu9RSwSDNPcNYR4QUnuDz4BLWrg-105083929
+    #         key: "psgcaLvlPhFj45hJS0IoU4xMT70Hm7QY-3568"
+    #         signature: $(signature($params))
+    #         userId: "3568"
+    #         pageSize: 20
+    #         curPage: 1
+    #         mainType: "moments"
+    #     assert:
+    #         json-json: {}
+
+
+    # 我的日志列表2:
+    #     params:
+    #         key: "xYuDOoqYcnTb6hAiStzAu4XsYyA1WOVE-106906327"
+    #         signature: $(signature($params))
+    #         userId: "106906327"
+    #         pageSize: 20
+    #         curPage: 2
+    #         mainType: "moments"
+    #     assert:
+    #         json-json:
+    #             errcode: ""
+    #             errdesc: ""
+    #             errdesc_en: ""
+    #             result: "1"
+
+
+    # # 岗位职责
+    # 1. 参与需求评审，设计编写测试用例，测试用例执行，并负责BUG跟踪和管理。
+    # 2. 按时保质的完成测试任务
+    # 3. 产品上线后，做好线上问题跟踪并推动解决
+
+    # # 任职条件
+    # 1. 计算机相关专业，了解软件测试基本理论，基本方法，流程与规范
+    # 2. 善于发现，分析和总结问题，有良好的团队协作
+    # 3. 工作认证细致，喜欢技术工作，充满激情
+    # 4. 有责任心，细心 逻辑严谨，自学能力强
+
+
+#  /v1/live/user-level      "message": "你还没有登录哦",
+#  /v1/live/rank "message": "你还没有登录哦",
+#  /v1/live/type-list "message": "你还没有登录哦",
+#  /v1/live/perm "message": "你还没有登录哦",
+#  /v1/live/living-friends  "message": "你还没有登录哦",
+#  /v1/live/topFansToday  "message": "你还没有登录哦",
+#  /v1/live/gift/list  "message": "你还没有登录哦",
+#  /v1/live/gift/detail "message": "你还没有登录哦",
+#  /v3/nearBy/top5User not found page
+#  /v3/interface/resources not found page
+#  v3/roamWorld/config not found page
+
+
+
+
+# 1.话题小程序1.1测试
+# 2.5.3.0测试
+# 3.web星座活动测试
+# 4.愚人节彩虹屁活动
+# 5.直播列表新逻辑测试 与 node重构rpc接口测试。
+
+# roam_world_title
+# {"title":{"chs":"杭州","cht":"杭州","en":"Hangzhou"},"lng":120.1551,"lat":30.2741}
+
+#
+# 1.附近的人不展示距离：查看的人自己的经纬度为0 , 还未同步 到es 中
+
+
+
+
+
+
+# 1. 4.1 愚人节彩虹屁活动 （周一收尾）
+# 2. 530需求测试。（漫游title， 广告位 ， 顶部title。-- 周一， 客户端服务端bug）
+# 3. 新版本直播列表数据不正确。
+# 4. node rpc 重构测试
+# 5. 3月份bug 修复验证
+
+# 四月份任务：
+# 1. 531需求
+# 2. 饭角用例书写
+# 3. 饭角测试
+# 4. 活动测试
+# 5. node 重构上线
+# 6. 数据库与等保 验证

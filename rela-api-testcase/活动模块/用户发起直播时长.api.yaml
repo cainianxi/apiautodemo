@@ -1,0 +1,18 @@
+test-case:  # 标志
+    直播时长:
+        params:
+            userId: "106806610" 
+            type: "1"  # 类型：1 发起直播； 2 观看直播
+            startTime: "2020-01-01 00:00:00" # 结束时间
+            endTime: "2020-06-06 00:00:00" # 结束时间
+        assert:
+            json-json: {}
+
+    观看时长:
+        params:
+            userId: "106806610" 
+            type: "2"  # 类型：1 发起直播； 2 观看直播
+            startTime: "2019-09-01 00:00:00" # 结束时间
+            endTime: "2019-09-10 00:00:00" # 结束时间
+        assert:
+            json-json: {}

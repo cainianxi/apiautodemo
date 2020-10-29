@@ -1,0 +1,8 @@
+test-case:  # 标志
+    参与话题:
+        params:
+            key: "ntbYqMxOqrIYuzfdav9lL3PcheL0m2le-106806610"
+            signature: $(signature($params))
+            id: 158487552988710002
+        assert:
+            json-json: {}

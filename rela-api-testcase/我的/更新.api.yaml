@@ -1,0 +1,7 @@
+test-case:  # 标志
+    更新:
+        params:
+            key: "NUcXjqBLeLOsuwi9e96nn1Z6KB4LeQOb-102804363"
+            signature: $(signature($params))
+        assert:
+            json-json: {}

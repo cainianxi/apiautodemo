@@ -1,0 +1,28 @@
+test-case:  # 标志
+    发布话题_设政:
+        data:
+            momentsText: "毛泽东"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    发布话题_色情:
+        data:
+            momentsText: "约炮"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    发布话题_辱骂:
+        data:
+            momentsText: "我操你妈"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    发布话题_广告:
+        data:
+            momentsText: "需要兼职的私我哦 日赚百八十的没问题 私我了解详情"
+            signature: $(signature($data))
+        assert:
+            json-json: {}

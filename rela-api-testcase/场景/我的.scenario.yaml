@@ -1,0 +1,499 @@
+# 场景定义文件
+# var:
+    # key: "IxTsdlCAiZXOj2XQw7PktFfHFahg74t4-106806610"
+    # userId: "106806610"
+group:
+    我的动态:
+        - 动态:
+            params:
+                cursor: 0
+                limit: 20
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {}
+    我的主页:
+        - 我的主页:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json:
+                    code: 0
+                    data: 
+                        id: $login_user_id
+#                schema: qdjz_schema.myinfo_api
+
+        - 获取用户等级:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"result": "1", "errcode": ""}
+#                schema: my.level_api
+
+        - 人气:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                userId: $login_user_id
+            assert:
+                json-json: {"result": "1", "errcode": "", "errdesc": ""}
+#                schema: my.popularity_api
+
+        - 是否首充:
+            params:
+                key: ${${login}['data']['key']}
+            assert:
+                json-json:
+                    data: { "isFirstCharge": 0 }
+                    code: 0
+#                schema: my.first_change_api
+
+        - rela会员:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"errdesc": "", "errdesc_en": "", "result": "1"}
+#                schema: my.vip_api
+        - 我的等级:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: 
+                    errdesc: ""
+                    errcode: ""
+                    result: "1"
+#                shcmea: my.level_api
+        - 谁看过我:
+            params:
+                key: ${${login}['data']['key']}
+                pageSize: 50
+                curPage: 1
+                signature: $(signature($params))
+            assert:
+                json-json: 
+                    errdesc: ""
+                    errcode: ""
+                    result: "1"
+#                schmea: my.look_me_api
+
+        - 谁喜欢我列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {}
+
+        - 谁看过我列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {}
+
+        - 我的资料:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+#                schmea: qdjz_schema.myinfo_api
+        - 照片墙:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+#                schmea: my.image_api
+
+        - 我的个人主页:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                userId: $login_user_id
+            assert:
+                json-json: {"code": 0, "message": ""}
+
+        - 我的日志:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                userId: $login_user_id
+                pageSize: 20
+                curPage: 1
+                mainType: "moments"
+            assert:
+                json-json: {"code": 0, "message": ""}
+#                schema: my.my_moment_api
+        - 时光机:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+                limit: 1
+            assert:
+                json-json: {"code": 0, "message": ""}
+    我的关系:
+        - 我的关系:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+    我的收藏:
+        - 我的收藏:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+                limit: 10
+            assert:
+                json-json: {"code": 0, "message": ""}
+    充值:
+        - 充值列表:
+            params:
+                key: ${${login}['data']['key']}
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+        - 充值记录:
+            params:
+                key: ${${login}['data']['key']}
+                cursor: 0
+                limit: 50
+                filter: incoming
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+        - 消费记录:
+            params:
+                key: ${${login}['data']['key']}
+                cursor: 0
+                limit: 50
+                filter: outgoing
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+    关注:
+        - 我的关注:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                userid: $login_user_id
+                pageSize: 20
+                curPage: 1
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+        - 朋友:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                userid: $login_user_id
+                pageSize: 20
+                curPage: 1
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+        - 粉丝:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                userid: $login_user_id
+                pageSize: 20
+                curPage: 1
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+        - 主播:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+            assert:
+                json-json: {"errdesc": "", "result": "1"}
+        - 悄悄关注列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                userid: $login_user_id
+                view_class: "TLSneakFollowViewController"
+                from_class: TLMyRelationViewController
+                pageSize: 20
+                curPage: 1
+            assert:
+                json-json: {"errdesc": "", "result": "1"}
+    绑定朋友情侣:
+
+        # 添加情侣
+        - 添加朋友:
+            data:
+                key: ${${login}['data']['key']}
+                requestType: 0
+                receivedId: "$friend_userid1"
+                signature: $(signature($data))
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+
+        - 添加朋友:
+            data:
+                key: ${${login}['data']['key']}
+                requestType: 1
+                receivedId: "$friend_userid2"
+                signature: $(signature($data))
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+
+        - 我的关系:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                userid: $login_user_id
+                pageSize: 20
+                curPage: 1
+            output: bindlist
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+
+        - 取消请求:
+            data:
+                key: ${${login}['data']['key']}
+                requestId:  ${${bindlist}['data']['paternerd']['requestId']}
+                view_class: "UIAlertController"
+                signature: $(signature($data))
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+
+
+        - 取消请求:
+            data:
+                key: ${${login}['data']['key']}
+                requestId:  ${${bindlist}['data']['bffs'][0]['requestId']}
+                view_class: "UIAlertController"
+                signature: $(signature($data))
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+        # 添加朋友
+
+    修改个人资料:
+
+        # - 照片排序:
+        #     data:
+        #         key: ${${login}['data']['key']}
+        #         signature: $(signature($data))
+        #     assert:
+        #         json-json: {"errdesc": "", "errdesc_en": "", "result": "1"}
+        - 个人资料修改:
+            data:
+                key: ${${login}['data']['key']}
+                intro: "$intro"
+                weight: "$weight"
+                signature: $(signature($data))
+            assert:
+                json-json: 
+                    result: "1"
+                    errdesc_en: ""
+                    errdesc: ""
+        - 我的主页:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: 
+                    code: 0
+                    data:
+                        weight: "$weight"
+    收藏操作:
+
+        - 我的收藏:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+                limit: 10
+            assert:
+                json-json: {"code": 0, "message": ""}
+            output: operate
+
+        - 删除收藏:
+            data:
+                key: ${${login}['data']['key']}
+                id: ${${operate}['data']['list'][0]["id"]}
+                content: ""
+                type: "mom"
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0 }
+
+        - 添加收藏:
+            data:
+                key: ${${login}['data']['key']}
+                content: ${${operate}['data']['list'][0]['momentsId']}
+                type: "mom"
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0 }
+    操作个人日志:
+        - 发布内容:
+            data:
+                key: ${${login}['data']['key']}
+                momentsText: "自动化测试用例--11"
+                signature: $(signature($data))
+            output: moments
+            assert:
+                json-json: {"code": 0 }
+
+        - 设置置顶:
+            data:
+                momentsId: "${${moments}['data']['momentsId']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0 }
+
+        - 取消置顶:
+            data:
+                momentsId: "${${moments}['data']['momentsId']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {  "errcode": "", "result": "1"}
+
+        - 设置隐私:
+            data:
+                momentsId: "${${moments}['data']['momentsId']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0 }
+
+        - 设置公开:
+            data:
+                momentsId: "${${moments}['data']['momentsId']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0 }
+
+        - 删除内容:
+            data:
+                momentsId: "${${moments}['data']['momentsId']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0 }
+
+        - 恢复日志:
+            data:
+                id: "${${moments}['data']['momentsId']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0 }
+        
+    查询朋友关注:
+        - 查询关注朋友:
+            data: 
+                keyword: "rudolf"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+                curPage: 0
+                pageSize: 10
+                type: 0
+            assert:
+                json-json: { "errcode": "", "result": "1"}
+    用户操作:
+        # 挤眼
+        # - 挤眼:
+        #     ata:
+        #         userId: 106199969
+        #         key: ${${login}['data']['key']}
+        #         signature: $(signature($data))
+        #     assert:
+        #         json-json:
+        #             code: 0
+
+        - 点击聊天:
+            params:
+                userId: $login_user_id_join_live
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"result": "1"}
+
+        - 获取用户卡片:
+            params:
+                userId: $login_user_id_join_live
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"result": "1"}
+
+        # 取消悄悄关注
+        - 悄悄关注:
+            data:
+                receivedId: $friend_userid3
+                actionType: 0
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json:
+                    code: 0
+                    data: {"followUserId": "$friend_userid3" }
+        # 悄悄关注
+        - 悄悄关注:
+            data:
+                receivedId: $friend_userid3
+                actionType: 1
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json:
+                    code: 0
+                    data: {"followUserId": "$friend_userid3" }
+    屏蔽用户:
+        - 屏蔽用户:
+            data:
+                userId: $friend_userid3
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: 
+                    code: 0
+                    data: { "userId": $friend_userid3 }
+        - 我的屏蔽:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+
+        - 取消屏蔽:
+            data:
+                userId: $friend_userid3
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: 
+                    result: "1"
+
+scenario:
+    我的主页:
+        - 我的主页
+        - 我的关系
+        - 我的收藏
+        - 充值
+        - 关注
+    发起情侣朋友绑定:
+        - 绑定朋友情侣
+    修改个人资料:
+        - 修改个人资料
+    我的收藏:
+        - 收藏操作
+    个人日志:
+        - 操作个人日志
+    查询朋友关注:
+        - 查询朋友关注
+    用户操作:
+        - 用户操作
+    屏蔽用户:
+        - 屏蔽用户
+    我的动态:
+        - 我的动态

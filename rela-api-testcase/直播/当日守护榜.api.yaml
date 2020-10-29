@@ -1,0 +1,27 @@
+test-case:  # 标志
+    守护榜key为空:
+        params:
+            key: ""
+        assert:
+            json-json:
+                code: 0
+    守护榜key不存在:
+        params:
+            key: "1111111111111"
+        assert:
+            json-json:
+                code: 0
+    主播key当日守护榜:
+        params:
+            key: "Fnu1iufIZLGUltliTS7Vu3hKCUznVj8f-106759846"
+            userId: "106759846"
+        assert:
+            json-json:
+                code: 0
+    观众key当日守护榜:
+        params:
+            key: "AiCRwBQDtgZeuN02Q57B5TxplMNp47vR-106789864"
+            userId: "106759846"
+        assert:
+            json-json:
+                code: 0

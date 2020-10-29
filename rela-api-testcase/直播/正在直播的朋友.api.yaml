@@ -1,0 +1,45 @@
+test-case:  # 标志
+    # userId不存在:  # 测试用例名称
+    #     data:
+    #         key: ~
+    #     assert:
+    #         json-json: {"errcode": ""}
+
+    # 不存在的userId:
+    #     data:
+    #         key: "1234567"
+    #     assert:
+    #         json-json: {"errcode": ""}
+
+    # userId未登录:
+    #     data:
+    #         key: ""
+    #     assert:
+    #         json-json: {"errcode": ""}
+
+    # 关注人员直播:
+    #     data:
+    #         key: ${${login}['data']['key']}
+    #     assert:
+    #         json-json: {"errcode": "", "list": []}
+
+    # 朋友未直播:
+    #     data:
+    #         key: ${${login}['data']['key']}
+    #     assert:
+    #         json-json: {"errcode": "", "list": []}
+
+    正在直播的朋友:
+        params:
+            key: 10351138455091985340-106806610
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    # 正在直播的朋友--生产:
+    #     # setup:
+    #         # 设置直播
+    #     params:
+    #         key: hbXCpSFe3CaBo3QtffbUl3oxRTAn2tMm-106806610
+    #     assert:
+    #         json-json: {}

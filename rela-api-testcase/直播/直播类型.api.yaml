@@ -1,0 +1,12 @@
+test-case:  # 标志
+    # 直播类型--生产:
+    #     params:
+    #         key: hbXCpSFe3CaBo3QtffbUl3oxRTAn2tMm-106806610
+    #     assert:
+    #         json-json: {}
+
+    直播类型--测试:
+        params:
+            key: VkeKU88qID0VZ6ooT5J2Pv7o5qFU1ygu-106759850
+        assert:
+            json-json: {}

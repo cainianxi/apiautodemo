@@ -1,0 +1,11 @@
+test-case:  # 标志
+    推荐用户:
+        params:
+            key: "fGhpReGMWF1pVuxpr3SVMYFfsJtRfsA9-104259065"
+            cursor: 0
+            limit: 20
+            lat: 0
+            lng: 0
+            signature: $(signature($params))
+        assert:
+            json-json: {}

@@ -1,0 +1,158 @@
+test-case:  # 标志
+    喜欢:
+        data:
+            likeType: "like"
+            userId: "106843071"
+            # key:  tGw4n8o0qYBk5QKDpdn2dsXR3zNrzcOe-106843071
+            key: ${${login}['data']['key']}
+            view_class: "TLMatchViewController"
+            from_class: "RfSUniversalRouterRootViewController"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    喜欢1:
+        data:
+            likeType: "like"
+            userId: "104153993"
+            # key: tGw4n8o0qYBk5QKDpdn2dsXR3zNrzcOe-106843071
+            key: ${${login}['data']['key']}
+            view_class: "TLMatchViewController"
+            from_class: "RfSUniversalRouterRootViewController"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    喜欢2:
+        data:
+            likeType: "like"
+            userId: "104183079"
+            # key: Ny3CbtBB5C0cFcmOGt4hhDdr4bLMvxaJ-104153993
+            key: ${${login}['data']['key']}
+            view_class: "TLMatchViewController"
+            from_class: "RfSUniversalRouterRootViewController"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    喜欢3:
+        data:
+            likeType: "like"
+            userId: "104338341"
+            # key: Ny3CbtBB5C0cFcmOGt4hhDdr4bLMvxaJ-104153993
+            key: ${${login}['data']['key']}
+            view_class: "TLMatchViewController"
+            from_class: "RfSUniversalRouterRootViewController"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    喜欢4:
+        data:
+            likeType: "like"
+            userId: "106851715"
+            # key: Ny3CbtBB5C0cFcmOGt4hhDdr4bLMvxaJ-104153993
+            key: ${${login}['data']['key']}
+            view_class: "TLMatchViewController"
+            from_class: "RfSUniversalRouterRootViewController"
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+
+    # 喜欢3:
+    #     data:
+    #         likeType: "like"
+    #         userId: "104091816"
+    #         key: ePz96XmGzFG2bKtynn8neNOA1NTxWIkx-106901069
+    #           #${${login}['data']['key']}
+    #         view_class: "TLMatchViewController"
+    #         from_class: "RfSUniversalRouterRootViewController"
+    #         signature: $(signature($data))
+    #     assert:
+    #         json-json: {}
+
+    # 喜欢4:
+    #     data:
+    #         likeType: "like"
+    #         userId: "104091816"
+    #         key: xNjXGkiU1hQhdvaVASRpT8Vj7LLOlfgK-104153993
+    #           #${${login}['data']['key']}
+    #         view_class: "TLMatchViewController"
+    #         from_class: "RfSUniversalRouterRootViewController"
+    #         signature: $(signature($data))
+    #     assert:
+    #         json-json: {}
+
+
+    # 喜欢5:
+    #     data:
+    #         likeType: "like"
+    #         userId: "104091816"
+    #         key: 63Duj5o2NzK1RyYmSEIWPx5HMwZBWLWN-107068787
+    #           #${${login}['data']['key']}
+    #         view_class: "TLMatchViewController"
+    #         from_class: "RfSUniversalRouterRootViewController"
+    #         signature: $(signature($data))
+    #     assert:
+    #         json-json: {}
+
+
+    # 喜欢6:
+    #     data:
+    #         likeType: "like"
+    #         userId: "104091816"
+    #         key: 2uxZHtKNa7GFgxeP72XNc8eoibhXtKb3-106851715
+    #           #${${login}['data']['key']}
+    #         view_class: "TLMatchViewController"
+    #         from_class: "RfSUniversalRouterRootViewController"
+    #         signature: $(signature($data))
+    #     assert:
+    #         json-json: {}
+
+    # 喜欢7:
+    #     data:
+    #         likeType: "like"
+    #         userId: "104091816"
+    #         key: xbpwcO0IP7m95NoYye6ITQbjxqKS3bFv-108681327
+    #           #${${login}['data']['key']}
+    #         view_class: "TLMatchViewController"
+    #         from_class: "RfSUniversalRouterRootViewController"
+    #         signature: $(signature($data))
+    #     assert:
+    #         json-json: {}
+    # 喜欢8:
+    #     data:
+    #         likeType: "like"
+    #         userId: "104091816"
+    #         key: iZPSQceYzIbaknJfhCLwQlQycLldaCOE-104500363
+    #           #${${login}['data']['key']}
+    #         view_class: "TLMatchViewController"
+    #         from_class: "RfSUniversalRouterRootViewController"
+    #         signature: $(signature($data))
+    #     assert:
+    #         json-json: {}
+
+    # 喜欢9:
+    #     data:
+    #         likeType: "like"
+    #         userId: "104091816"
+    #         key: gJixLjkf2bDQAbnCI6MSvo4jGi7yQ4TV-107095537
+    #           #${${login}['data']['key']}
+    #         view_class: "TLMatchViewController"
+    #         from_class: "RfSUniversalRouterRootViewController"
+    #         signature: $(signature($data))
+    #     assert:
+    #         json-json: {}
+
+    # 喜欢2:
+    #     data:
+    #         likeType: "like"
+    #         userId: "108488261"
+    #         key: kyceE5xWxhb4VRB2mgPbVg48wTE8kqwy-104205815
+    #           #${${login}['data']['key']}
+    #         view_class: "TLMatchViewController"
+    #         from_class: "RfSUniversalRouterRootViewController"
+    #         signature: $(signature($data))
+    #     assert:
+    #         json-json: {}

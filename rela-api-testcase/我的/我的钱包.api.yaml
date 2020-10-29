@@ -1,0 +1,24 @@
+test-case:  # 标志
+#    我的钱包_106789926:
+#        params:
+#            key: "BO9mVbHuqie2cB30VX2pw6mSbHwifklA-106789926"
+#        assert:
+#            json-json: {}
+#
+#    我的钱包_106759840:
+#        params:
+#            key: "aMU1VTRvhJ4oCJmRQkfYZP9vrOcRImIh-106759840"
+#        assert:
+#            json-json: {}
+
+    我的钱包:
+        params:
+            key: "Pd0n7kBAParQJPXSkXGPuIOZFN9dkkxd-100448537"
+        assert:
+            json-json: {}
+
+    # 我的钱包_107121126_1:
+    #     params:
+    #         key: "iyBOxVyfjrjI7cuSyZpw01JATNjaYpVP-107121126"
+    #     assert:
+    #         json-json: {}

@@ -1,0 +1,8 @@
+test-case:  # 标志
+    我的朋友:
+        params:
+            key: "RmvtLEgT9W7twZ5HWlgayOZuFiXfOhOU-107245140"
+            userid: "107245140"
+            signature: $(signature($params)) 
+        assert:
+            json-json: {}

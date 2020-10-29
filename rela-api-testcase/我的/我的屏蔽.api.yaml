@@ -1,0 +1,9 @@
+test-case:  # 标志
+    我的屏蔽列表1:
+        data:
+            key: "pX5ByH0nymzrAH7S1PImO0iGe5fYnQr0-103380408"
+            signature: $(signature($data))
+            curPage: 1
+            pageSize: 10
+        assert:
+            json-json: {}

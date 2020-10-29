@@ -1,0 +1,25 @@
+test-case:  # 标志
+    礼物ID为空:  # 测试用例名称
+        params:
+            id: ""
+        assert:
+            json-json: {"code": 500, "errcode": "require_gift_id",  "errdesc": "Error:(require_gift_id)",  "result": "0", "message": "require_gift_id"}
+    礼物ID不存在:  # 测试用例名称
+        params:
+            id: 111111111111
+        assert:
+            json-json: {"code": 500, "errcode": "server_error" }
+    查看经典礼物:
+        params:
+            id: 12
+        assert:
+            json-json:
+                code: 0
+                data: {"id": 12, "isArGift": 0, "gold": 3, "status": 1, "arGiftId": 0}
+    查看ar礼物:
+        params:
+            id: 206
+        assert:
+            json-json:
+                code: 0
+                data: {"id": 206, "isArGift": 1, "gold": 1288, "status": 1, "arGiftId": 1410}

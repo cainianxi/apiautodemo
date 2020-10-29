@@ -1,0 +1,11 @@
+test-case:  # 标志
+    照片墙:
+        data:
+            signature: $(signature($data))
+            curPage: 1
+            pageSize: 20
+            view_class: TLProfilesViewController
+            from_class: RfSUniversalRouterRootViewController
+            apptype: universal
+            key: "kKoJ0YCVPN804lhrg0jEm9NSYjiBeUoo-103491236"
+        assert: {}

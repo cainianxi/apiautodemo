@@ -1,0 +1,32 @@
+test-case:  # 标志
+    查看礼物列表:
+        headers:
+            Etag: "99151c140323a1a34ebb9aeb2408d4d1"
+            User-Agent: rela_live/1.0.0_19 (iPhone X; iOS 13.50; zh-Hans; Wifi)
+        params:
+            key: "14637183358625288990-106806610"
+            signature: $(signature($params))
+        assert:
+            json-json: {}   
+       
+    # 登录key为空:  # 测试用例名称
+    #     params:
+    #         key: ""
+    #     assert:
+    #         json-json:
+    #             errcode: ""
+    #             result: "1"
+    # key不存在:  # 测试用例名称
+    #     params:
+    #         key: "111111111111"
+    #     assert:
+    #         json-json:
+    #             errcode: ""
+    #             result: "1"
+    # 查看成功:
+    #     params:
+    #         key: ${${login}['data']['key']}
+    #     assert:
+    #         json-json:
+    #             errcode: ""
+    #             result: "1"

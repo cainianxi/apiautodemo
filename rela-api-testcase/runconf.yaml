@@ -1,0 +1,13 @@
+db:
+    test_stay: # 数据库配置
+        host: 39.100.114.133
+        port: 4000
+        user: admin
+        password: testadminds2019
+        database: stay
+        default: true
+
+# 绝对路径
+data:  /Users/rudolf_han/Documents/autotest-case/rela-api-testcase/datafile
+logpath: /Users/rudolf_han/Documents/autotest-case/rela-api-testcase/log
+assert_script: /Users/rudolf_han/Documents/autotest-case/rela-api-testcase/business

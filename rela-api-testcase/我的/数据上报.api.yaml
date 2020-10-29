@@ -1,0 +1,10 @@
+test-case:  # 标志
+    数据上报:
+        # ZkHJTiGJBUDdxdvrCJ28CD8guSgD1Yea-101093043
+        params:
+            key: "Wl78aBTxcVoPz0TJE78ndgkDiReZQaCM-104716495"
+            signature: $(signature($params))
+            lat: "38.8326"
+            lng: "105.702929"
+        assert:
+            json-json: {}

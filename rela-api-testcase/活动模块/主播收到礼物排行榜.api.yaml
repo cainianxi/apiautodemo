@@ -1,0 +1,63 @@
+test-case:  # 标志
+    主播收取软妹币排行:
+        params:
+            sumType: "gem" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2020-06-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "1140214" # 礼物ID逗号分隔，示例：1,2
+            # anchorUserIds: "104205815" # 主播用户ID逗号分隔，示例：1,2
+        assert:
+            json-json: {}
+
+    主播收取软妹豆排行:
+        params:
+            sumType: "gold" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2020-06-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "1140214" # 礼物ID逗号分隔，示例：1,2
+            # anchorUserIds: "104205815" # 主播用户ID逗号分隔，示例：1,2
+        assert:
+            json-json: {}
+
+
+    主播收取礼物数量排行:
+        params:
+            sumType: "count" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2020-06-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "1140214" # 礼物ID逗号分隔，示例：1,2
+            # anchorUserIds: "104205815" # 主播用户ID逗号分隔，示例：1,2
+        assert:
+            json-json: {}
+
+
+    主播收取礼物数量排行_升序:
+        params:
+            sumType: "count" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2020-06-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "1140214" # 礼物ID逗号分隔，示例：1,2
+            order: 1
+            # anchorUserIds: "104205815" # 主播用户ID逗号分隔，示例：1,2
+        assert:
+            json-json: {}
+
+    指定主播收取礼物数量排行:
+        params:
+            sumType: "count" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2020-05-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "900246" # 礼物ID逗号分隔，示例：1,2
+            anchorUserIds: "106806610,104205815" # 主播用户ID逗号分隔，示例：1,2
+        assert:
+            json-json: {}
+
+    指定主播收取多礼物数量排行:
+        params:
+            sumType: "count" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2020-05-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "900246, 1140214" # 礼物ID逗号分隔，示例：1,2
+            anchorUserIds: "106806610,104205815" # 主播用户ID逗号分隔，示例：1,2
+        assert:
+            json-json: {}

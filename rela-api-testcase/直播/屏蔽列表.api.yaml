@@ -1,0 +1,10 @@
+test-case:  # 标志
+    屏蔽列表:
+        params:
+            signature: $(signature($params))
+        assert:
+            json-json:
+                errcode: ""
+                errdesc: ""
+                errdesc_en: ""
+                result: "1"

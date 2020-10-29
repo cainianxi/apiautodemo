@@ -1,0 +1,9 @@
+test-case:  # 标志
+    发现日志:
+        params:
+            key: ELGQeNfL2Hvs9ImrbdCeXvKqWV7kSbhA-104704298
+            lat: "22.740065"
+            lng: "113.800554"
+            signature: $(signature($params))
+        assert:
+            json-json: {}

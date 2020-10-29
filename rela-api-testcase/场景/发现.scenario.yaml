@@ -1,0 +1,166 @@
+
+group:
+    发现页加载:
+        # - 漫游世界配置:
+        #     params:
+        #         key: ${${login}['data']['key']}
+        #         signature: $(signature($params))
+        #     assert:
+        #         json-json: {"code": "0"}
+
+        - 附近日志:
+            params: 
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+                pageSize: 20
+                secondLng: 0
+                secondLat: 0
+            assert:
+                json-json: {"code": "0"}
+        - 发现页资源:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                location: discovery
+                resourceType: 1    
+            assert:
+                json-json: {"code": "0"}
+
+        - 附近人5:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"code": "0"}
+        - 附近日志:
+            params: 
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+                pageSize: 20
+                secondLng: 116.4071
+                secondLat: 39.9046
+
+        - 附近人5:
+            params:
+                secondLng: 116.4071
+                secondLat: 39.9046
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"code": "0"}
+    附近的人:
+        - 附近的人:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"code": "0"}
+
+        - 附近的人:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                affection: 1
+                active: 1
+                search: 1
+                age: 23,32
+                her_role_name: 1
+                recommendType: lbs
+            assert:
+                json-json: {"code": "0"}
+
+        - 附近的人:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                affection: 1
+                active: 1
+                search: 1
+                age: 23,32
+                secondLng: 116.4071
+                secondLat: 39.9046
+                her_role_name: 1
+                recommendType: lbs
+            output: nearby_friend
+            assert:
+                json-json: {"code": "0"}
+
+        # - 查看附近人主页:
+        #     params:
+        #         key: ${${login}['data']['key']}
+        #         signature: $(signature($params))
+        #         userId: ${${nearby_friend}['data']['map_list'][1]['userId']}
+        #     assert:
+        #         json-json: {"code": "0"}
+    速配:
+        - 速配:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            output: match_list
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+
+        - 谁喜欢我:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+                limit: 30
+            assert:
+                json-json: {"errdesc": "", "result": "1"}
+
+        - 喜欢:
+            data:
+                likeType: "unlike"
+                userId: ${${match_list}['data']['matchList'][0]['userId']}
+                key: ${${login}['data']['key']}
+                view_class: "TLMatchViewController"
+                from_class: "RfSUniversalRouterRootViewController"
+                signature: $(signature($data))
+            assert:
+                json-json: {}
+
+#        - 超级喜欢:
+#            data:
+#                key: ${${login}['data']['key']}
+#                signature: $(signature($data))
+#            assert:
+#                json-json: {"errdesc": "","result": "1"}
+
+        - 推送设置:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"errdesc": "", "result": "1"}
+        - 匹配设置:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"errdesc": "", "result": "1"}
+        - 我的速配资料:
+            params:
+                key: ${${login}['data']['key']}
+                userId: $login_user_id
+                signature: $(signature($params))
+            assert:
+                json-json: {"errdesc": "", "result": "1"}
+        - 退出速配:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"errdesc": "", "result": "1"}
+
+scenario:
+    发现页加载:
+        - 发现页加载
+    附近的人:
+        - 附近的人
+    速配:
+        - 速配
+# 后面用例进行 业务用例添加

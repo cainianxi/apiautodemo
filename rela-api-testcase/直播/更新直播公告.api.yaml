@@ -1,0 +1,56 @@
+test-case:  # 标志
+    更新直播公告_脸播:
+        data:
+            key: "4916964158868297873-106806610"
+            signature: $(signature($data))
+            roomId: "88888106806610"
+            liveId: "8915454"
+            userId: "106806610"
+            audioType: "0"
+            isMulti: "0"
+            classify: "5"
+            announcement: "测试公告更新000001"
+        assert:
+            json-json: {}
+
+    # 更新直播公告_脸播1:
+    #     data:
+    #         key: "4916964158868297873-106806610"
+    #         signature: $(signature($data))
+    #         roomId: "88888106806610"
+    #         liveId: "8915454"
+    #         userId: "106806610"
+    #         audioType: "0"
+    #         isMulti: "0"
+    #         classify: "5"
+    #         announcement: "测测试试2"
+    #     assert:
+    #         json-json: {}
+
+    # 更新直播公告_脸播2:
+    #     data:
+    #         key: "4916964158868297873-106806610"
+    #         signature: $(signature($data))
+    #         roomId: "88888106806610"
+    #         liveId: "8915454"
+    #         userId: "106806610"
+    #         audioType: "0"
+    #         isMulti: "0"
+    #         classify: "5"
+    #         announcement: "测试测试测试3"
+    #     assert:
+    #         json-json: {}
+
+    # 更新直播公告_脸播3:
+    #     data:
+    #         key: "4916964158868297873-106806610"
+    #         signature: $(signature($data))
+    #         roomId: "88888106806610"
+    #         liveId: "8915454"
+    #         userId: "106806610"
+    #         audioType: "0"
+    #         isMulti: "0"
+    #         classify: "5"
+    #         announcement: ""
+    #     assert:
+    #         json-json: {}

@@ -1,0 +1,117 @@
+test-case:  # 标志
+    # 查看个人主页:
+    #     params:
+    #         userId: "108488261"
+    #         key: 6BK3rSecZxFjPP9ss1xzXmbTtDwuWcwX-106806610
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 查看个人主页1:
+    #     params:
+    #         userId: "108488261"
+    #         key: RDmwbxOzrJaZTigD64idmSt1sMS8fiTh-100434248
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 查看个人主页2:
+    #     params:
+    #         userId: "108488261"
+    #         key: kyceE5xWxhb4VRB2mgPbVg48wTE8kqwy-104205815
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+
+    查看个人主页1:
+        params:
+            userId: "109930423"
+            key: CXbSkqNcydldxeohTJy3pZaK3wIPAbep-106707792
+              #${${login}['data']['key']}
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+#    查看个人主页2:
+#        params:
+#            userId: "104091816"
+#            key: Gb2pOexVuWBXrsljgveWL2D3irm65tUN-106843071
+#              #${${login}['data']['key']}
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#
+#    查看个人主页3:
+#        params:
+#            userId: "104091816"
+#            key: xGaSvmVddeBp7X1mC72gYafnaN7Nqvu4-100145919
+#              #${${login}['data']['key']}
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#
+#
+#    查看个人主页4:
+#        params:
+#            userId: "104091816"
+#            key: ePz96XmGzFG2bKtynn8neNOA1NTxWIkx-106901069
+#              #${${login}['data']['key']}
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#
+#    查看个人主页5:
+#        data:
+#            userId: "104091816"
+#            key: xNjXGkiU1hQhdvaVASRpT8Vj7LLOlfgK-104153993
+#              #${${login}['data']['key']}
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#
+#
+#    查看个人主页6:
+#        params:
+#            userId: "104091816"
+#            key: 63Duj5o2NzK1RyYmSEIWPx5HMwZBWLWN-107068787
+#              #${${login}['data']['key']}
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#
+#
+#    查看个人主页7:
+#        data:
+#            userId: "104091816"
+#            key: 2uxZHtKNa7GFgxeP72XNc8eoibhXtKb3-106851715
+#              #${${login}['data']['key']}
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#
+#    查看个人主页8:
+#        params:
+#            userId: "104091816"
+#            key: xbpwcO0IP7m95NoYye6ITQbjxqKS3bFv-108681327
+#              #${${login}['data']['key']}
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#    查看个人主页9:
+#        data:
+#            userId: "104091816"
+#            key: iZPSQceYzIbaknJfhCLwQlQycLldaCOE-104500363
+#              #${${login}['data']['key']}
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}
+#
+#    查看个人主页10:
+#        params:
+#            userId: "104091816"
+#            key: gJixLjkf2bDQAbnCI6MSvo4jGi7yQ4TV-107095537
+#              #${${login}['data']['key']}
+#            signature: $(signature($params))
+#        assert:
+#            json-json: {}

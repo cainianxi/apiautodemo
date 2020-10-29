@@ -1,0 +1,14 @@
+test-case:  # 标志
+    悄悄关注:
+        params:
+            key: "fy4D2htrCa3gehS8qGqvEi5Z5920EXVQ-156559"
+            userid: 156559
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+#    取消关注:
+#        data:
+#            key: Rm9BR7bF90qC67jpIwkYsdfwhPxX8kOd-106371205
+#            userid: 156559
+#            signature: $(signature($params))

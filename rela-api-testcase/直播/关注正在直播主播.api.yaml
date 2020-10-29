@@ -1,0 +1,17 @@
+test-case:  # 标志
+    # 关注正在直播的主播生产:
+    #     params:
+    #         key: EZsfLNwAiyKWVvlD40pZrTwUJQuLufyD-106825430
+    #     assert:
+    #         json-json: {}
+
+    # 连麦：1. 连麦观众退出 2. 连麦主播正常退出 3. 连麦观众 或 主播 异常退出
+    # 热聊上麦：1. 麦上正常下麦退出 2.麦上观众异常退出 3. 主播异常退出
+    # 异常退出
+
+
+    关注正在直播的主播测试:
+        params:
+            key: qrzPjaUSvsbVYx7fkhBIE0nI7aCDs0uU-106789926
+        assert:
+            json-json: {}

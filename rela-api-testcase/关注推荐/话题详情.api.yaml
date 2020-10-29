@@ -1,0 +1,13 @@
+test-case:  # 标志
+    查看日志详情:
+        params:
+            id: "159062551996910034"
+            key: "1dxBJPvVoJXsys2wi1sXXUSJ7DWLQRGf-176201"
+            # relateType: reply_theme
+            clientVersion: 50302
+            signature: $(signature($params))
+            lat: 31.542478
+            lng: 112.374417
+            language: zh_GB_%23Hans
+        assert:
+            json-json: {}

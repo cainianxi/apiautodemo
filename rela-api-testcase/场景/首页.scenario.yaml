@@ -1,0 +1,373 @@
+
+group:
+    登录:
+        - 登录:
+            data:
+                cell: $login_cell
+                code: $code
+                signature: $(signature($data))
+            output: login  # 保存变量
+            assert:
+                json-json: 
+                    code: 0
+                    message: ""
+                    data:
+                        user: {"id": '$login_user_id'}
+    搜索功能:
+        - 查找用户:
+            params:
+                keyWord: "god"
+                pageSize: 20
+                curPage: 1
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json:
+                    result: 1
+                    errcode: ""
+        - 查找标签:
+            params:
+                topicName: "test"
+                pageSize: 20
+                curPage: 1
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+
+            assert:
+                json-json:
+                    result: 1
+                    errcode: ""
+
+    关注页面加载:
+        - 关注用户日志:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                mainType: moments
+                pageSize: 20
+                curPage: 1
+            assert:
+                json-json: 
+                    code: 0
+                    data:
+                        mainType: "moments"
+
+        - 资源接口:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"code": 0}
+
+        - 推荐用户:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+                limit: 20
+            assert:
+                json-json: {"code": 0}
+
+        - 推荐用户:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                type: "all"
+                cursor: 0
+                limit: 20
+            assert:
+                json-json: {"code": 0}
+
+        - 黑名单:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"code": 0}
+
+        - 运营广告接口:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"errcode": "", "result": "1"}
+        - 推荐主播:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+                limit: 20
+            assert:
+                json-json: {"errdesc": "", "result": "1"}
+    # 
+    操作日志:
+        - 发布内容:
+            data:
+                key: ${${login}['data']['key']}
+                momentsText: $momentsText
+                signature: $(signature($data))
+            output: gz_moments
+            assert:
+                json-json: {"code": 0 }
+
+        - 查看日志详情:
+            params: 
+                id: "${${gz_moments}['data']['momentsId']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"code": 0 }
+        - 喜欢日志:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+                momentsId: ${${gz_moments}['data']['momentsId']}
+                winkCommentType: 8 
+            assert:
+                json-json: {"code": 0}
+
+        - 不喜欢日志:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+                momentsId: ${${gz_moments}['data']['momentsId']}
+            assert:
+                json-json: {"code": 0}
+
+        - 评论:
+            data:
+                key: ${${login}['data']['key']}
+                signature: "$(signature($data))"
+                momentId: "${${gz_moments}['data']['momentsId']}"
+                atUserList: "" 
+                text: "$coment_text"
+                type: "text"
+            output: gz_comment
+            assert:
+                json-json: {"code": 0}
+        - 日志评论列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                id: ${${gz_comment}['data']['momentsId']}
+                limit: 50
+                cursor: 0
+            assert:
+                json-json: 
+                    code: 0
+                    data:
+                        id: ${${gz_comment}['data']['momentsId']}
+        - 喜欢评论:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))                
+                commentsId: ${${gz_comment}['data']['id']}
+            assert:
+                json-json: {"code": 0}
+
+        - 取消喜欢评论:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))                
+                commentsId: ${${gz_comment}['data']['id']}
+            assert:
+                json-json: {"code": 0}
+
+        - 回复评论:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))  
+                toUserId: ${${login}['data']['user']['id']}
+                commentId: ${${gz_comment}['data']['id']}
+                atUserList: ""
+                text: "$re_coment_text"
+                type: "text"
+            output: re_gz_comment
+            assert:
+                json-json: {"code": 0}
+
+        - 回复评论列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                id: ${${gz_comment}['data']['id']}
+                cursor: 0
+                limit: 10
+            assert:
+                json-json: {"code": 0}
+
+        - 推荐评论:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                momentId: ${${gz_comment}['data']['momentsId']}
+                cursor: 0
+                limit: 10
+            assert:
+                json-json: {"code": 0}
+
+        - 删除回复评论:
+            data: 
+                id: ${${re_gz_comment}['data']['id']}
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0}
+
+        - 删除评论:
+            data:
+                id: ${${gz_comment}['data']['id']}
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0}
+
+        - 删除内容:
+            data:
+                momentsId: "${${gz_moments}['data']['momentsId']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0}
+    
+    推荐页面加载:
+        - 推荐Mini:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: 0
+                limit: 100
+            assert:
+                json-json: {"code": 0}
+        - 推荐日志:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                mainType: moments
+                cursor: 0
+                limit: 20
+            assert:
+                json-json: {"code": 0}
+
+        - 推荐话题:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                cursor: 0
+                limit: 20
+            assert:
+                json-json: {"code": 0}
+
+    话题操作:
+        - 发布内容:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))  
+                momentsText: "$theme_momentsText"
+                minText: "$theme_momentsTex"
+                mixedTextMedia: [{"text":"$theme_momentsTex","imageUrl":null,"videoUrl":null,"pixelWidth":null,"pixelHeight":null,"playTime":null,"contentType":"text"}]
+                momentsType: "theme"
+                minMedia: []
+            output: theme_moment
+            assert:
+                json-json: {"code": 0}
+
+        - 话题详情:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                id: "${${theme_moment}['data']['momentsId']}"
+                parentMomentId: ""
+                relateType: ""
+
+        - 参与话题:
+            data:
+                key: ${${login}['data']['key']}
+                parentId: "${${theme_moment}['data']['momentsId']}"
+                signature: $(signature($data))  
+                momentsText: "测试参与自动化话题"
+                minText: "测试参与自动化话题"
+                mixedTextMedia: '[{"text":"测试参与自动化话题","imageUrl":null,"videoUrl":null,"pixelWidth":null,"pixelHeight":null,"playTime":null,"contentType":"text"}]'
+                momentsType: "themereply"
+                minMedia: '[]'
+                themeReplyClass: "image"
+                shareTo: 1
+                secret: 0
+                atUserList: ""
+                tagList: ""
+                imageUrlList: ""
+                syncMainPage: -1
+                isFive: 1
+            output: join_theme_moment
+            assert:
+                json-json: {"code": 0}
+
+        - 话题详情:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                id: "${${join_theme_moment}['data']['id']}"
+                parentMomentId: "${${theme_moment}['data']['momentsId']}"
+                relateType: ""
+            assert:
+                json-json: {"code": 0}
+
+        - 参与话题列表:
+            params: 
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                id: "${${theme_moment}['data']['momentsId']}"
+                sortType: 2
+                cursor: "0"
+                limit : "10"
+            assert:
+                json-json: {"code": 0}
+
+        - 删除内容:
+            data:
+                momentsId: "${${join_theme_moment}['data']['id']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0}
+
+        - 删除内容:
+            data:
+                momentsId: "${${theme_moment}['data']['momentsId']}"
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+            assert:
+                json-json: {"code": 0}
+    登录退出:
+        - 登录:
+            data:
+                cell: $login_1_cell
+                code: $code
+                signature: $(signature($data))
+            output: login_1  # 保存变量
+            assert:
+                json-json: {}
+        - 退出登录:
+            data:
+                view_class: UIAlertController
+                key: ${${login_1}['data']['key']}
+            assert:
+                json-json: {}
+
+
+scenario:
+    关注页面加载:
+        - 关注页面加载
+    搜索功能:
+        - 搜索功能
+    推荐页面加载:
+        - 推荐页面加载
+    操作日志:
+        - 操作日志
+    操作话题:
+        - 话题操作
+    登录退出:
+        - 登录退出
+
+
+

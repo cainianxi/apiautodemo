@@ -1,0 +1,7 @@
+test-case:  # 标志
+    简单的用户轮廓:
+        params:
+            signature: $(signature($params))
+            userId: "106997291"
+            key: "9lvXWJyVnsm2telsCpBHUGlIOLsdzdVF-106997291"
+        assert: {}

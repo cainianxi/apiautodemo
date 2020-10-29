@@ -1,0 +1,30 @@
+test-case:  # 标志
+    用户赠送礼物_不指定主播:
+        params:
+            userId: 100876824
+            # ownerId:  4 # 主播ID
+            startTime: "2020-01-01 00:00:00" # 结束时间
+            endTime: "2020-06-01 00:00:00" # 结束时间
+            giftId: "118" 
+        assert:
+            json-json: {}
+
+    用户赠送礼物_指定主播:
+        params:
+            userId: 100876824
+            ownerId:  46522 # 主播ID
+            startTime: "2020-01-01 00:00:00" # 结束时间
+            endTime: "2020-06-01 00:00:00" # 结束时间
+            giftId: "118" 
+        assert:
+            json-json: {}
+
+    用户赠送礼物_不指定礼物:
+        params:
+            userId: 100876824
+            # ownerId:  46522 # 主播ID
+            startTime: "2020-01-01 00:00:00" # 结束时间
+            endTime: "2020-06-01 00:00:00" # 结束时间
+            # giftId: "118" 
+        assert:
+            json-json: {}

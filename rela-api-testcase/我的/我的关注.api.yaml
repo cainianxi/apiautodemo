@@ -1,0 +1,10 @@
+test-case:  # 标志
+    我的关注:
+        params:
+            key: "1395488545975286252-106806610"
+            signature: $(signature($params))
+            userid: "106806610"
+            pageSize: 100
+            curPage: 1
+        assert:
+            json-json: {}

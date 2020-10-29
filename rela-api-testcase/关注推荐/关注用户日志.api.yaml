@@ -1,0 +1,10 @@
+test-case:  # 标志
+    关注:
+        params:
+            key: "bIgvoyM4wEC4On2Pz1sNJrSJrdNBMRP2-103264179"
+            signature: $(signature($params))
+            mainType: moments
+            pageSize: 20
+            curPage: 1
+        assert:
+            json-json: {}

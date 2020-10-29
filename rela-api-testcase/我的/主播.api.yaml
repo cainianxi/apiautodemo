@@ -1,0 +1,10 @@
+test-case:  # 标志
+    关注主播:
+        params:
+            key: "uVRlpWgjwbRebsErNRa9iUZyC3fF7T8A-108481572"
+            signature: $(signature($params))
+            userid: "108481572"
+            pageSize: 20
+            curPage: 1
+        assert:
+            json-json: {}

@@ -1,0 +1,10 @@
+test-case:  # 标志
+    超级喜欢:
+        data:
+            userId: "108681327"
+            key: "GeY7Uedsll8mMg7FLkTIJyPBcl4RxctT-106851715"
+            view_class: "TLMatchViewController"
+            from_class: "RfSUniversalRouterRootViewController"
+            signature: $(signature($data))
+        assert:
+            json-json: {}

@@ -1,0 +1,53 @@
+test-case:  # 标志
+    用户赠送软妹币排行:
+        params:
+            sumType: "gem" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2019-10-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "118" # 礼物ID逗号分隔，示例：1,2
+            anchorUserId: "46522" # 
+        assert:
+            json-json: {}
+
+    用户赠送软妹豆排行:
+        params:
+            sumType: "gold" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2019-10-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "118" # 礼物ID逗号分隔，示例：1,2
+            anchorUserId: "46522" # 主播用户ID逗号分隔，示例：1,2
+        assert:
+            json-json: {}
+
+
+    用户赠送礼物数量排行:
+        params:
+            sumType: "count" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2019-10-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "118" # 礼物ID逗号分隔，示例：1,2
+            anchorUserId: "46522" 
+        assert:
+            json-json: {}
+
+
+    用户赠送物数量排行_升序:
+        params:
+            sumType: "count" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2019-10-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "118" # 礼物ID逗号分隔，示例：1,2
+            order: 1
+            anchorUserId: "46522"
+        assert:
+            json-json: {}
+
+    指定指定用户赠送多礼物数量排行:
+        params:
+            sumType: "count" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: "2019-10-01 00:00:00"  # 开始时间    
+            endTime: "2020-06-04 23:59:59" # 结束时间
+            refId: "118, 360216" # 礼物ID逗号分隔，示例：1,2
+            anchorUserId: "46522" # 主播用户ID逗号分隔，示例：1,2
+        assert:
+            json-json: {}

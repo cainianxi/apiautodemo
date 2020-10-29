@@ -1,0 +1,9 @@
+test-case:  # 标志
+    取消关注:
+        data:
+            key: "4356476996546867226-108889920"
+            receivedId: 106806610
+            actionType: 1
+            signature: $(signature($data))
+        assert:
+            json-json: {}

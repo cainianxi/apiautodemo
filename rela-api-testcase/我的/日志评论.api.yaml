@@ -1,0 +1,11 @@
+test-case:  # 标志
+    日志评论:
+        params:
+            key: "21utKKIR5kIg1v4q9SoNarXaGrjhtdsX-107101117"
+            signature: $(signature($params))
+            id: "15728017893234001"
+            limit: 400
+            cursor: 0
+            apptype: universal
+        assert:
+            json-json: {}

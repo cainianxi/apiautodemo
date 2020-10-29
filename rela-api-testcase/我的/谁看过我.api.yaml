@@ -1,0 +1,11 @@
+test-case:  # 标志
+    谁看过我:
+        params:
+          key: "sy8TDswfR9FQf52YoedAEDlgjAel51Eb-101302004"
+          pageSize: 50
+          curPage: 1
+          lat: "0.0"
+          lng: "0.0"
+          signature: $(signature($params))
+        assert:
+            json-json: {}

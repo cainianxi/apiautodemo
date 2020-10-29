@@ -1,0 +1,12 @@
+test-case:  # 标志
+    直播rank生产:
+        params:
+            key: "dzp7uwXje8RavbzDMVjUkNOUMPqtHvRA-106896751"
+        assert:
+            json-json: {}
+
+    # 直播rank测试:
+    #     params:
+    #         key: bLxJO3V0veUKpX4WqDOkOG2JiBhbSnZj-106789864
+    #     assert:
+    #         json-json: {}

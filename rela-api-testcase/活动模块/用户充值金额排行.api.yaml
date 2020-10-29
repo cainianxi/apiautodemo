@@ -1,0 +1,9 @@
+test-case:  # 标志
+    用户充值排行:
+        params:
+            limit: 1000
+            type:  4 # 充值类型：1：VIP；2：表情包；4充值；8：超级喜欢
+            startTime: "2020-03-20 16:00:00" # 结束时间
+            endTime: "2020-03-25 15:59:59" # 结束时间
+        assert:
+            json-json: {}

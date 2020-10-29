@@ -1,0 +1,1057 @@
+# 所有api共用的配置信息
+base:
+    url: http://test-api.rela.me/  # 外网访问
+    # url: http://api-idc.rela.me/
+    # url: http://test-api.rela.me/  # 外网访问
+#    url: https://ali-pre-api.rela.me/  # 预生产
+#    url: http://ali-pre-api.rela.me/  # 预生产
+#    url: http://api.rela.me/ # 生产
+    # url: https://api-idc.rela.me/ #idc
+    method: POST  # 请求方式
+    headers:  # 头部信息
+        Content-Type: application/x-www-form-urlencoded
+
+# 各api的独立配
+api:
+    登录:
+        url: v1/auth/signin-newformat
+        data: login.json
+
+
+################# 启动加载 #######################
+    配置:
+        url: v3/interface/ab/config 
+        method: GET
+        params: publicJson.json
+
+    我的信息:
+        url: v3/interface/stay/myInfoForFriend
+        method: GET
+        params: publicJson.json
+        # publicJson.json
+
+    关注推荐:
+        url: v3/followpage/recommend/list
+        method: GET
+        params: publicJson.json
+
+    推荐Mini:
+        url: v3/themes/mini/list
+        method: GET
+        params: publicJson.json
+
+    黑名单用户:
+        url: v2/users/blacklist
+        method: GET
+        params: publicJson.json
+
+    初始化数据:
+        url: v2/params/init        
+        method: GET
+        params: publicJson.json
+
+#########################################
+
+
+    用户信息:
+        url:  v1/user/card
+        method: GET
+        # params: publicJson.json 
+
+    检查手机:
+        url:  v1/auth/check-cell
+        method: GET
+        # params: publicJson.json 
+
+    检查用户名:
+        url:  v1/auth/check-username
+        method: GET
+        # params: publicJson.json 
+
+    简单的用户信息:
+        url:  v1/auth/simple-profile
+        method: GET
+        # params: publicJson.json 
+
+    用户资料:
+        url:  v1/auth/profile
+        method: GET
+        params: publicJson.json 
+
+    # 取消绑定:
+    #     url:  v1/auth/unbind-all
+    #     method: GET
+    #     params: publicJson.json 
+
+    # 初始用户信息:
+    #     url: v1/auth/init-user-info
+    #     method: GET
+    #     params: publicJson.json
+    修改头像:
+        url:  v1/user/upload_avatar
+        method: POST
+        data:
+            avatar: ""
+            userId: ""
+            key: ""
+    
+    退出登录:
+        url: interface/stay/appUser!logout.do
+        method: POST
+        data: publicJson.json
+
+
+################ 我的页面 ######################
+    我的主页:
+        url: v3/interface/stay/myInfoForFriend 
+        method: GET
+        params: publicJson.json
+    是否首充:
+        url: v1/gold/is-first-charge-newformat
+        method: GET
+        params: publicJson.json
+    rela会员:
+        url: v2/users/vip/detail
+        method: GET
+        params: publicJson.json
+    我的等级:
+        url: v1/live/user-level
+        method: GET
+        params: publicJson.json
+    设置等级:
+        url: "v1/live/user-level-setting"
+        method: POST
+        data:
+            levelIconSwitch: 1
+            isCloaking: 1
+            entrySwitch: 0
+            debug: 0
+            lng: "121.481529"
+            language: "zh-Hans-CN"
+            clientVersion: "50203"
+            deviceId: "sm_20190914111158a20842d25d75291a3a94d850704bd0b301b21472faf4dac5"
+            key: "CPmpK6esnc1QoGfT2cYlLxZ2Zp0SfBb2-106825430"
+            lat: "31.245867"
+            mobileOS: "IOS%2012.200000"
+    谁看过我:
+        url: interface/stay/appUserView!cheackView.do
+        method: GET
+        params: publicJson.json
+        # pageSize=50&curPage=1
+    我的资料:
+        url: interface/stay/appUser!myInfoForFriend.do
+        method: GET
+        params: publicJson.json
+    照片墙:
+        url: interface/stay/appUserImage!myImagesList.do
+        method: GET
+        params: publicJson.json
+    时光机:
+        url: v3/moments/recyclebin
+        method: GET
+        params: publicJson.json
+    恢复日志:
+        url: v3/moments/recover
+        method: POST
+        data: publicJson.json
+        # id 
+    我的关系:
+        url: interface/stay/binding/getBindingList
+        method: GET
+        params: publicJson.json
+    取消请求:
+        url: /interface/stay/request/cancelRequest
+        method: POST
+        data: publicJson.json
+    我的朋友:
+        url: interface/stay/appUserFollower!getAtFriendUser.do
+        method: GET
+        params: publicJson.json
+    添加朋友:
+        url: interface/stay/request/sendRequest
+        method: POST
+        data:
+            anniversaryDate: "2020-01-03"
+            requestType: 0 # 添加伴侣 1 添加密友
+            requestComent: "我们恋爱了"
+            receivedId: ""
+            clientVersion: "50203"
+            key: "D1NkoFXOBbOzPV7gpovBSs4kXNbdcue0-106709511"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+    充值列表:
+        url: v1/gold/list
+        method: GET
+        params: publicJson.json
+    充值记录:
+        url: v1/wallet/gold/history
+        method: GET
+        params: publicJson.json
+        # cursor=0&limit=50&filter=incoming
+    消费记录:
+        url: v1/wallet/gold/history
+        method: GET
+        params: publicJson.json
+        # cursor=0&limit=50&filter=outgoing
+    照片排序:
+        url: v2/images/sort
+        method: POST
+        data:
+            apptype: "universal"
+            client: "iPhone8"
+            clientVersion: "50203"
+            key: "GfcxArhigzakwRoCnu8sBaZQ9n8Uwu1A-101144734"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            view_class: "TLMyBlackViewController"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+            from_class: "TLSettingViewController"
+            images: "52366283,52366294,52366287,52366284,52337323,52366285,52337324"
+    我的收藏:
+        url: v3/favorite/list
+        method: GET
+        params: publicJson.json
+        # limit=10&cursor=0
+    添加收藏:
+        url: v3/favorite/operate
+        method: POST
+        data: publicJson.json
+    删除收藏:
+        url: v3/favorite/delete
+        method: POST
+        data: publicJson.json
+        # id=2296932&content=&type=mom&
+    我的屏蔽:
+        url: interface/stay/appUser!getUserBlackList.do
+        method: POST
+        data:
+            apptype: "universal"
+            client: "iPhone8"
+            clientVersion: "50203"
+            curPage: 1
+            pageSize: 20
+            key: "GfcxArhigzakwRoCnu8sBaZQ9n8Uwu1A-101144734"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            view_class: "TLMyBlackViewController"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+            from_class: "TLSettingViewController"
+    查看个人主页:
+        url: v3/interface/stay/newUserInfoForFriend
+        method: GET
+        params: publicJson.json
+        # userId=106806610
+    个人资料修改:
+        url: "interface/stay/appUser!updateUserInfo.do"
+        method: POST
+        data: 
+            apptype: "universal"
+            client: "iPhone8"
+            clientVersion: "50203"
+            curPage: 1
+            pageSize: 20
+            key: "GfcxArhigzakwRoCnu8sBaZQ9n8Uwu1A-101144734"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            view_class: "TLMyBlackViewController"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+            from_class: "TLSettingViewController"
+            birthday: "1990-04-19"
+            wantRole: ""
+            occupation: ""
+            ethnicity: 0
+            avatarURL: "http://static.rela.me/app/avatar/106806610/8d63439d5162c07da260f638c5bf1c1a.jpg"
+            purpose: ""
+            nickName: "god"
+            livecity: ""
+            affection: -1
+            intro: ""
+            roleName: "3"
+            professionalTypes: null
+            weight: ""
+
+# 11-2 发布日志。YqeicQbcb2WKUsQTKB1DhMuw8IqOwMOZ-108170516
+
+    查找用户:
+        url: friend/stay/topic/searchNickname
+        method: GET
+        params: publicJson.json
+
+    查找标签:
+        url: friend/stay/topic/suggest
+        method: GET
+        params: publicJson.json
+
+    创建标签:
+        url: v3/friend/stay/moments/createTopic
+        method: POST
+        data: publicJson.json
+
+    我的日志: 
+        url: v3/friend/stay/moments/listWithMusicMultiImg
+        method: GET
+        params: publicJson.json
+#            userId: "106523582"
+#            pageSize: "20"
+#            curPage: 1
+#            mainType: "moments"
+#            key: "9K6tepEbQ1joUATmE74GvtxMOrcRYTLn-106523582"
+    设置置顶:
+        url: v3/friend/stay/moments/setUserBoardTopMoment 
+        method: POST
+        data: publicJson.json
+            # momentsId: ""
+    取消置顶:
+        url: v3/friend/stay/moments/cancelUserBoardTopMoment
+        method: POST
+        data: publicJson.json
+            # momentsId: ""
+    设置公开:
+        url: v3/friend/stay/moments/cancelHideMoment
+        method: POST
+        data: publicJson.json
+            # momentsId: ""
+    设置隐私:
+        url: v3/friend/stay/moments/hideMoment
+        method: POST
+        data: publicJson.json
+            # momentsId: ""
+    我的钱包:
+        url: v1/wallet
+        method: GET
+        params: publicJson.json
+    我的关注:
+        url: interface/stay/appUserFollower!getNewFollowUser.do
+        method: GET
+        params: publicJson.json
+    朋友:
+        url: interface/stay/appUserFollower!getNewFriendUser.do
+        method: GET
+        params: publicJson.json
+    粉丝:
+        url: interface/stay/appUserFollower!getNewFansUser.do
+        method: GET
+        params: publicJson.json
+    主播:
+        url: v2/users/follow/anchors
+        method: GET
+        params: publicJson.json
+    悄悄关注列表:
+        url: interface/stay/appUserFollowerSecretly
+        method: GET
+        params: publicJson.json
+    人气:
+        url: v1/wink/popularity
+        method: GET
+        params: publicJson.json
+    查询关注朋友:
+        url: interface/stay/search!searchFollowUser.do
+        method: POST
+        data: publicJson.json
+    悄悄关注:
+        url: v3/interface/stay/secretlyFollow
+        method: POST
+        data: publicJson.json
+            # receivedId：
+            # actionType: 0 取消关注 1 悄悄关注
+    取消关注:
+        url: interface/stay/appUserFollower!followUser.do
+        method: POST
+        data: publicJson.json
+        # receivedId
+        # actionType
+
+
+    屏蔽用户:
+        url: v3/interface/stay/pullUserIntoBlackList
+        method: POST
+        data: publicJson.json
+            # userId
+    取消屏蔽:
+        url: interface/stay/appUser!removeFromBlackList.do
+        method: POST
+        data: publicJson.json
+        # userId
+    挤眼:
+        url: v1/wink/create-newformat
+        method: POST
+        data: publicJson.json
+        # 
+    点击聊天:
+        url: v2/users/relation/single
+        method: GET
+        params: publicJson.json
+
+    聊天用户卡片:
+        url: v2/users/card
+        method: GET
+        params: publicJson.json
+
+    提现设置:
+        url: v3/user/withdrawConf
+        method: GET
+        params: publicJson.json
+
+    谁喜欢我列表:
+        url: v3/mate/newLikeMeSimpleList
+        method: GET
+        params: publicJson.json
+    谁看过我列表:
+        url: v3/user/viewMeSimpleList
+        method: GET
+        params: publicJson.json
+
+
+    动态:
+        url: v3/friend/stay/moments/activityList
+        method: GET
+        params: publicJson.json
+
+
+####################### 首页： 关注/推荐
+    推荐主播:
+        url: v2/users/recommend/list_random
+        method: GET
+        params: publicJson.json
+
+
+    更新:
+        url: friend/stay/moments/notRead
+        method: GET
+        params: publicJson.json
+    # 关注用户日志
+    关注用户日志:
+        url: "/v3/friend/stay/moments/listWithMusicMultiImg"
+        method: GET
+        params: publicJson.json
+            # mainType: moments
+            # pageSize: 20
+            # curPage: 1
+    # 广告，关注用户zhib
+#    资源接口_old:  # 404
+#        url: mainpage/subscribe
+#        method: GET
+#        params: publicJson.json
+
+    资源接口:
+        url: v3/mainpage/subscribe
+        method: GET
+        params: publicJson.json
+    推荐用户:
+        url: v3/followpage/recommend/list
+        method: GET
+        params: publicJson.json
+        # cursor
+        # limit
+        # type = all 查看全部推荐用户
+
+    黑名单:
+        url: v3/users/blacklist
+        method: GET
+        params: publicJson.json
+
+    运营广告接口:
+        url: interface/stay/appSystem!getMainAdvert.do
+        method: GET
+        params: publicJson.json
+    查看日志详情:
+        url: /v3/moments/detail
+        method: GET
+        params: publicJson.json
+        # id
+    喜欢日志:
+        url: v3/friend/stay/moments/wink
+        method: POST
+        data: publicJson.json
+        # momentsId
+        # winkCommentType
+    不喜欢日志:
+        url: v3/friend/stay/moments/unwink
+        method: POST
+        data: publicJson.json
+        # momentsId
+    评论:
+        url: v3/moments/comment/create
+        method: POST
+        data: publicJson.json
+            # momentId: "157769189628600064"
+            # atUserList: "" # @人
+            # text: "测试"
+            # type: "text"
+    删除评论:
+        url: v3/moments/comment/delete
+        method: POST
+        data: publicJson.json
+    日志评论列表:
+        url: v3/moments/comment/list
+        method: GET
+        params: publicJson.json
+        # id
+    喜欢评论:
+        url: v3/friend/stay/comment/wink
+        method: POST
+        data: publicJson.json
+        # commentsId
+    取消喜欢评论:
+        url: v3/friend/stay/comment/unwink
+        method: POST
+        data: publicJson.json
+        # commentsId
+    回复评论:
+        url: v3/moments/commentReply/create
+        method: POST
+        data: publicJson.json
+        # toUserId
+        # commentId
+        # atUserList
+        # text
+        # type
+    回复评论列表:
+        url: v3/moments/commentReply/list
+        method: GET
+        params: publicJson.json
+        # id # 日志
+        #  cursor
+        # limit
+    删除回复评论:
+        url: v3/moments/commentReply/delete
+        method: POST
+        data: publicJson.json
+        # id
+    推荐评论:
+        url: v3/moments/recommend/user/list
+        method: GET
+        params: publicJson.json
+        # momentId
+        # cursor
+
+##### 推荐 
+
+    推荐日志:
+        url: v3/recommend/moments
+        method: GET
+        params: publicJson.json
+            # mainType: moments
+            # cursor: 0
+            # limit: 20
+    推荐话题:
+        url: v3/themes/hotTheme/viewList
+        method: GET
+        params: publicJson.json
+            # cursor: 0
+            # limit: 20
+    参与话题:
+        url: v3/themes/comment/add
+        method: POST
+        data: publicJson.json
+    话题详情:
+        url: v3/themes/detail
+        method: GET
+        params: publicJson.json
+        # id
+        # parentMomentId
+        # relateType
+    参与话题列表:
+        url: v3/themes/comment/list
+        method: GET
+        params: publicJson.json
+        # id 
+        # sortType
+        # cursor
+        # limit
+
+    发布内容_old:
+        url: friend/stay/moments/add
+        method: POST
+        data:
+            momentsText: ""
+            momentsType: "text"
+            shareTo: 1
+            secret: 0
+            atUserList: ""
+            tagList: ""
+            imageUrlList: "http://static.rela.me/app/timeline/109929689/8c4ea8c54d753b205ca780f25996939d*__*3840x5760.jpg"
+            pixeWidth: ""
+            pixeHeight: ""
+            mediaSize: ""
+            playTime: ""
+            videoUrl: ""
+            videoWebp: ""
+            imageLengthList: ""
+            isFive: 1
+            key: "1IjhJev2qacWKNy5wG2B0k4KJB3n01qW-106759839"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+
+    发布内容:
+        url: v3/friend/stay/moments/add
+        method: POST
+        data:
+            momentsText: ""
+            momentsType: "text_image"
+            shareTo: 1
+            secret: 0
+            atUserList: ""
+            tagList: ""
+            imageUrlList: ""
+            pixeWidth: ""
+            pixeHeight: ""
+            mediaSize: ""
+            playTime: ""
+            videoUrl: ""
+            videoWebp: ""
+            imageLengthList: ""
+            isFive: 1
+            key: "1IjhJev2qacWKNy5wG2B0k4KJB3n01qW-106759839"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+    删除内容:
+        url: v3/friend/stay/moments/delete
+        method: POST
+        data:  publicJson.json
+        # momentsId
+
+#######  直播 ###########
+    
+    直播分类列表:
+        url: /v3/live/classify-list
+        method: GET
+        params:
+            key: ""
+            language: "zh-Hans-CN"
+            clientVersion: "10001"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+            userAgent: "rela_live/1.0.1(iPhone X; iOS 13.50; zh-Hans; Wifi)"
+
+    更新直播公告:
+        url: /v3/live/update-announcement
+        method: POST
+        data: 
+            key: ""
+            language: "zh-Hans-CN"
+            clientVersion: "10001"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+            userAgent: "rela_live/1.0.1(iPhone X; iOS 13.50; zh-Hans; Wifi)"
+            roomId: ""
+            liveId: ""
+            userId: ""
+            audioType: ""
+            isMulti: ""
+            classify: ""
+            announcement: ""
+
+
+
+    直播类型:
+        url: v1/live/type-list
+        method: GET
+        params: publicJson.json
+    
+    ar礼物:
+        # 业务说明：客户端拿到这个 key 与之前比较 判断是否需要更新下载 ar礼物。
+        url: v1/live/gift/arPreReleaselist 
+        method: GET
+        params: publicJson.json
+            # appId: com.rela
+            # view_class: RfSUniversalRouterRootViewController 
+    榜单:
+        url: v1/live/rank
+        method: GET
+        params: publicJson.json
+            # view_class: RfSUniversalRouterRootViewController
+    推荐列表:
+        url: v1/live/list
+        method: GET
+        params: publicJson.json
+            # cursor: "0"
+            # limit: 20
+            # sort: "hot"
+            # view_class: "RfSUniversalRouterRootViewController"
+    直播列表:
+        url: v1/live/video-live-list
+        method: GET
+        params: publicJson.json
+            # cursor: "0"
+            # limit: 20
+            # view_class: "RfSUniversalRouterRootViewController"
+    热聊列表:
+        url: v1/live/audio-live-list
+        method: GET
+        params: publicJson.json
+            # cursor: "0"
+            # limit: 20
+            # isMulti： 1 热聊 0 电台
+            # view_class: "RfSUniversalRouterRootViewController"
+
+    是否首次充值:
+        url: v1/gold/is-first-charge
+        method: GET
+        data: publicJson.json
+        # from_class: RfSUniversalRouterRootViewController
+        # view_class: TLLiveViewController  
+
+
+    检查公告: # 待解决问题
+        url: v1/live/check-announcement-available
+        method: GET
+        data: publicJson.json
+            # announcement:
+
+    直播权限:
+        url: v1/live/perm
+        method: GET
+        params: publicJson.json
+            # userId: ""
+            # key: ""  
+            # view_class: TLLiveViewController  
+
+    获取用户等级: # 
+        url: v1/live/user-level
+        method: GET
+        params: publicJson.json
+
+    创建直播:
+        url: v1/live/create
+        method: POST
+        data: publicJson.json
+        # view_class: "RfSUniversalRouterRootViewController"
+        # text: 工程师调试11
+        # liveTypeId: 5
+        # city: 上海
+        # audioType: 0
+        # appId: com.rela
+        # announcement: 测试
+        # imageUrl: http://static.rela.me/app/live/106806610/3a1c065655e0e3fc739cda618220f018.jpg
+
+    正在直播的朋友:
+        url: v1/live/living-friends
+        method: GET
+        params: publicJson.json
+
+
+    关注正在直播主播:
+        url: v1/live/followingUsers
+        method: GET
+        params: publicJson.json
+
+
+    礼物列表:
+        url: v1/live/gift/list
+        method: GET
+        params: publicJson.json
+
+    礼物详情:
+        url: v1/live/gift/detail
+        method: GET
+        params: publicJson.json
+         # id: ""
+         # view_class: "RfSUniversalRouterRootViewController"
+         # appId: "com.thel"
+         # from_class: RfSUniversalRouterRootViewController 
+
+    关闭直播:
+        url: v1/live/stop
+        method: POST
+        data: publicJson.json
+        # from_class: RfSUniversalRouterRootViewController
+        # view_class: TLLiveViewController
+
+    加入直播间:
+        url: v1/live/detail-info
+        method: GET
+        data: publicJson.json
+        # from_class: RfSUniversalRouterRootViewController
+        # view_class: TLLiveViewController
+        # id: 88888101197119
+    直播间榜单:
+        url: v1/live/topfansv2
+        method: GET
+        data: publicJson.json
+        # limit: 50
+        # type: month, today, week
+        # from_class: RfSUniversalRouterRootViewController
+        # view_class: TLLiveViewController
+        # userId: 101197119
+    当日守护榜:
+        url: v1/live/topFansToday
+        method: GET
+        params: publicJson.json
+            # cursor: "0"
+            # userId: 106759846
+
+    等级相关详情设置:  # 调用不通过
+        url: v1/live/user-level-setting
+        data:
+            levelIconSwitch: ""
+            entrySwitch: ""
+            key: ""
+            deviceId: sm_201907301123154b1e35a8001c063df96668cf83c63a170145b1a2332a1c56
+            language: zh-Hans
+            lat: 0
+            lng: 0
+            mobileOS: IOS%2012.400000
+
+####################### 发现 tab #######################
+    
+    漫游世界配置:
+        url: v3/roamWorld/config
+        method: GET
+        params:  publicJson.json
+    附近日志:
+        url: "v3/friend/stay/explore/nearByMoment"
+        method: GET
+        params:  publicJson.json
+            # cursor: 0
+            # pageSize: 20
+            # secondLng
+            # secondLat
+    发现页资源:
+        url: v3/interface/resources
+        method: GET
+        params:  publicJson.json  
+        # location: discovery
+        # resourceType: 1     
+    附近人5:
+        url: v3/nearBy/top5User
+        method: GET
+        params: 
+            secondLng: "0.0"
+            secondLat: "0.0"
+            supSta: ""
+            newRegist: ""
+            her_role_name: ""
+            age: ""
+            affection: ""
+            active: ""
+            vip: ""
+            have_photo: ""
+            horoscope: ""
+            clientVersion: "50300"
+            cursor: 0
+            pageSize: 20
+            recommendType: ai
+            search: 0
+            key: "MphuhVzKO1dtNOe5eAS2nVNJDTrjv5zc-100497515"
+            language: "zh-Hans-CN"
+            lat: "35.6898"
+            lng: "139.6932"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+    附近的人:
+        url: "v3/interface/stay/appUser!nearbySimpleList.do"
+        method: GET
+        params:
+            secondLng: ""
+            secondLat: ""
+            supSta: ""
+            newRegist: ""
+            her_role_name: ""
+            age: ""
+            affection: ""
+            active: ""
+            vip: ""
+            have_photo: ""
+            horoscope: ""
+            clientVersion: "50300"
+            cursor: 0
+            pageSize: 40
+            recommendType: ai
+            search: 0
+            key: "MphuhVzKO1dtNOe5eAS2nVNJDTrjv5zc-100497515"
+            language: "zh-Hans-CN"
+            lat: "35.6898"
+            lng: "139.6932"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+    查看附近人主页:
+        url: "v3/interface/stay/newUserInfoForFriend"
+        method: GET
+        params: publicJson.json
+    速配:
+        url: "interface/stay/match/matchList"
+        method: GET
+        params: publicJson.json  
+        # pageSize
+        # curPage
+
+    喜欢:
+        url: interface/stay/match/like
+        method: POST
+        data: 
+            likeType: like
+            # unlike
+            userId: ""
+            view_class: TLMatchViewController
+            from_class: RfSUniversalRouterRootViewController
+            clientVersion : "50300"
+            key: "iyBOxVyfjrjI7cuSyZpw01JATNjaYpVP-107121126"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+
+    超级喜欢: 
+        url: v2/mate/superlike
+        method: POST
+        data: 
+            userId: "108681327"
+            key: "GeY7Uedsll8mMg7FLkTIJyPBcl4RxctT-106851715"
+            view_class: "TLMatchViewController"
+            from_class: "RfSUniversalRouterRootViewController"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+
+    谁喜欢我:
+        url: "v2/mate/newLikeMeList"
+        method: GET
+        params: publicJson.json
+        # cursor: 0
+        # limit: 30
+    推送设置:
+        url: "v2/push/switch/list"
+        method: GET
+        params: publicJson.json
+    匹配设置:
+        url: "v2/mate/matchProfile"
+        method: GET
+        params: publicJson.json
+    我的速配资料:
+        url: "interface/stay/appUser!newUserInfoForFriend.do"
+        method: GET
+        params: publicJson.json
+    退出速配:
+        url: v2/mate/exitMatch
+        method: POST
+        data: publicJson.json
+    数据上报:
+        url: friend/stay/moments/notRead
+        method: GET
+        params:
+            clientVersion: "50203"
+            key: "MphuhVzKO1dtNOe5eAS2nVNJDTrjv5zc-100497515"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+    话题喜欢:
+        url: v3/moments/like/list
+        method: GET
+        params:
+            id: 158402527878810045
+            limit: 20
+            cursor: 0
+            clientVersion: "50203"
+            key: "MphuhVzKO1dtNOe5eAS2nVNJDTrjv5zc-100497515"
+            language: "zh-Hans-CN"
+            lat: "31.247612"
+            lng: "121.481529"
+            mobileOS: "IOS%2012.200000"
+            deviceId: "sm_20190829161721fb918daa87b6238e49b35dfe25ca718901d45e58c851b14a"
+
+
+
+####################### 活动模块 #######################
+
+    主播收到礼物排行榜:
+        url: v2/internal/common/giftRank/anchorList
+        method: GET
+        params:
+            sumType: "gem" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: ""  # 开始时间   
+            endTime: "" # 结束时间
+            refId: "" # 礼物ID逗号分隔，示例：1,2
+            anchorUserIds: "" # 主播用户ID逗号分隔，示例：1,2
+            order: 2 # 升序：1 ；降序：2；
+            page: 1
+            limit: 20
+
+    用户送礼排行榜:
+        url: v2/internal/common/giftRank/userList
+        method: GET
+        params:
+            sumType: "gem" # 软妹币：gem；软妹豆：gold；礼物数量：count；
+            startTime: ""  # 开始时间   
+            endTime: "" # 结束时间
+            refId: "" # 礼物ID逗号分隔，示例：1,2
+            anchorUserId: "" # 主播用户ID
+            order: 2 # 升序：1 ；降序：2；
+            page: 1
+            limit: 20
+
+    用户直播时长: # 视频
+        url: v2/internal/live/getUserLiveSeconds
+        method: GET
+        params:
+            userId: "" 
+            type: ""  # 类型：1 发起直播； 2 观看直播
+            startTime: "" # 结束时间
+            endTime: "" # 结束时间
+            liveDuration: "" # 筛选时长满足条件的直播，单位是秒
+
+    用户发起直播时长: # 视频和音频
+        url: v2/internal/live/getUserSumLiveSeconds
+        method: GET
+        params:
+            userId: "" 
+            startTime: "" # 结束时间
+            endTime: "" # 结束时间
+            liveDuration: "" # 筛选时长满足条件的直播，单位是秒
+
+    用户充值金额: # 视频和音频
+        url: v2/internal/user/chargeCount
+        method: GET
+        params:
+            userId: "" 
+            type:  4 # 充值类型：1：VIP；2：表情包；4充值；8：超级喜欢
+            startTime: "" # 结束时间
+            endTime: "" # 结束时间
+    
+    用户充值金额排行:
+        url: v2/internal/user/chargeRank
+        method: GET
+        params:
+            limit: 10
+            type:  4 # 充值类型：1：VIP；2：表情包；4充值；8：超级喜欢
+            startTime: "" # 结束时间
+            endTime: "" # 结束时间
+
+    用户送礼物数量:
+        url: v2/internal/user/giftCount
+        method: GET
+        params:
+            userId: ""
+            ownerId: "" # 主播ID
+            startTime: "" # 结束时间
+            endTime: "" # 结束时间
+            giftId: "" 
+
+    用户收礼物数量:
+        url: v2/internal/user/getGiftCount
+        method: GET
+        params:
+            userId: “”
+            startTime: "" # 结束时间
+            endTime: "" # 结束时间
+            giftId: "" 

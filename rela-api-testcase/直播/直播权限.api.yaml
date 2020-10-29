@@ -1,0 +1,16 @@
+test-case:  # 标志
+    直播权限:
+        params:
+            key: 18149595829140527592-106806610
+            userId: 106806610
+            view_class: RfSUniversalRouterRootViewController
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    # 直播权限--测试: # 有权限
+    #     params:
+    #         key: QnkRRY2C3hiFQJ3ZsoIhz3Z53j6N3Wnp-106789865
+    #         userId: 106789865
+    #     assert:
+    #         json-json: {}

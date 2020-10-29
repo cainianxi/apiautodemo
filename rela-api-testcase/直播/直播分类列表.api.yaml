@@ -1,0 +1,7 @@
+test-case:  # 标志
+    直播分类列表:
+        params:
+            key: "4916964158868297873-106806610"
+            signature: $(signature($params))
+        assert:
+            json-json: {}

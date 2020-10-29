@@ -1,0 +1,12 @@
+test-case:  # 标志
+    # 获取用户等级--生产:
+    #     params:
+    #         key: hbXCpSFe3CaBo3QtffbUl3oxRTAn2tMm-106806610
+    #     assert:
+    #         json-json: {}
+
+    获取用户等级--测试:
+        params:
+            key: VkeKU88qID0VZ6ooT5J2Pv7o5qFU1ygu-106759850
+        assert:
+            json-json: {}

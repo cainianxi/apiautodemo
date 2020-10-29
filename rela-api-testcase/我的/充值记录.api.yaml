@@ -1,0 +1,9 @@
+test-case:  # 标志
+    充值记录:
+        params:
+            signature: $(signature($params))
+            cursor: 0
+            limit: 50
+            filter: "incoming"
+            key: "pd5WYO1jAvFlGjD3Tm5nXwoJzTyYIffe-106806610"
+        assert: {}

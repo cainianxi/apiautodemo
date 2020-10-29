@@ -1,0 +1,23 @@
+test-case:  # 标志
+    查看附近日志:
+        params:
+            key: Sf8YoiVcfb9iYJO4vfnKH87iXAt69tOR-106806610
+            lat: "31.245713"
+            lng: "121.486555"
+            pageSize: 20
+            secondLng: 0.0
+            secondLat: 0.0
+            cursor: 0
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    # 插看附近日志1:
+    #     params:
+    #         key: 0AKmNMPDqxLbjEU5cAIYEcTFoMIdabSd-106806610
+    #         lat: "26.081813"
+    #         lng: "119.207212"
+    #         cursor: 1
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}

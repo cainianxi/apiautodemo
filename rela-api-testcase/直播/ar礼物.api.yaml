@@ -1,0 +1,12 @@
+test-case:  # 标志
+    ar礼物生产: 
+        params:
+            key: h8AHyBoqYXq0f7WYIBzjL9s6OdIsdMaP-106806610
+        assert:
+            json-json: {}
+
+    # ar礼物测试:
+    #     params:
+    #         key: VkeKU88qID0VZ6ooT5J2Pv7o5qFU1ygu-106759850
+    #     assert:
+    #         json-json: {}

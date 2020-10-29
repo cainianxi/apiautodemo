@@ -1,0 +1,16 @@
+test-case:  # 标志
+    创建异常标签:
+        data:
+            key: 6ntexZbGSe6bKgI0u7xkW3v45dcp9xk1-106806610
+            topicName: 习大大哈哈哈
+            signature: $(signature($data))
+        assert:
+            json-json: {}
+
+    创建异常标签_1:
+        data:
+            key: 6ntexZbGSe6bKgI0u7xkW3v45dcp9xk1-106806610
+            topicName: 测试正常数据
+            signature: $(signature($data))
+        assert:
+            json-json: {}

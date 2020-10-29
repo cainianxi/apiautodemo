@@ -1,0 +1,40 @@
+test-case:  # 标志
+    话题喜欢1:
+        params:
+            key: "uWVNKQdz5GVC6v1o3MKYyX2chtwpFjLd-106806610"
+            cursor: 0
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    话题喜欢2:
+        params:
+            key: "uWVNKQdz5GVC6v1o3MKYyX2chtwpFjLd-106806610"
+            cursor: 1
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    话题喜欢3:
+        params:
+            key: "uWVNKQdz5GVC6v1o3MKYyX2chtwpFjLd-106806610"
+            cursor: 2
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    话题喜欢4:
+        params:
+            key: "uWVNKQdz5GVC6v1o3MKYyX2chtwpFjLd-106806610"
+            cursor: 3
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    话题喜欢5:
+        params:
+            key: "uWVNKQdz5GVC6v1o3MKYyX2chtwpFjLd-106806610"
+            cursor: 4
+            signature: $(signature($params))
+        assert:
+            json-json: {}

@@ -1,0 +1,78 @@
+test-case:  # 标志
+    速配1:
+        params:
+            key: "0J5w3j2mTz12Q3MeMTJzyyiSxC5MAVTV-109871899"
+            lat: "49.122256"
+            lng: "-122.683954"
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+    # 速配2:
+    #     params:
+    #         key: "DgSLyszotjsS9QITGF1Z08z7UrV3m6Sh-107568583"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 速配3:
+    #     params:
+    #         key: "fJss0M872jjYUjUU0H9HafaOu74eOPZd-251511"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 速配4:
+    #     params:
+    #         key: "u8ajx3ki6G7He9mOrZxur0SBFkUrkPxf-107642236"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 速配5:
+    #     params:
+    #         key: "9DyBkX6Libp8YNbOqDbL9ilhS2SXTEYF-107640948"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 速配6:
+    #     params:
+    #         key: "BhzAybvCJed4CO2pYvjF1VmfwWYUzuC6-107663304"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 速配8:
+    #     params:
+    #         key: "ooiIUiNEMq73GvOsJd5kiqD9vYvTgx0y-107638437"
+    #         signature: $(signature($params))
+    #     assert: {}
+
+    # 速配9:
+    #     params:
+    #         key: "Y7eJIWRoiPdZdwk3OMULQCVrPDUiYHOJ-107637028"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+    # 速配10:
+    #     params:
+    #         key: "5tkcE96YabPMzvxELitIdkZa2LueCaAC-107566798"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 速配11:
+    #     params:
+    #         key: "QwsdGggeXiyBkQ6Pbcw1VkU4YMlGC8pG-107642631"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+
+    # 速配12:
+    #     params:
+    #         key: "ooiIUiNEMq73GvOsJd5kiqD9vYvTgx0y-107638437"
+    #         signature: $(signature($params))
+    #     assert:
+    #         json-json: {}
+

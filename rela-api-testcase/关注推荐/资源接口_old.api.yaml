@@ -1,0 +1,197 @@
+test-case:  # 标志
+    关注_old:
+        params:
+            key: "16362423948502970959-106806610"
+            signature: $(signature($params))
+        assert:
+            json-json: {}
+
+
+# 530 
+# 活动 与 小程序已上线。
+# 新需求部分完成：90%  （ab 落地页阻塞）
+# 暴露出问题： 服务端+客户端  43 ，已解决：17 个
+# node 直播列表重构： 直播列表已上预生产 正在进行数据观察与校验
+# node rpc 接口暂停状态。
+
+
+# @张涛 
+# /v1/live/gift/arPreReleaselist ---- 接口已通，但是发送ar礼物无效，感觉是key 有问题。
+# /v1/live/rank  -- 通过
+# v1/live/type-list -- 通过。（感觉废弃）
+# /v1/live/recommend-follow-with-type  -- 暂时未测
+# @陈磊 
+# v1/live/followingUsers -- 测试通过
+# v1/live/living-friends -- 测试通过
+# /v1/live/check-announcement-available  -- 接口已通，但后半部分接数美暂未完成
+# /v1/live/meta  -- 通过（感觉已废弃）
+
+# @吴翼鹏 
+# /v1/live/user-level  ---- 通过
+# /v1/live/user-level-setting ---- 阻塞
+# /v1/live/recommend-follow-anchors  -- 暂时未测
+
+# @必煦
+# /v1/live/perm -- 通过
+# /v1/live/stop  -- 通过
+
+
+
+# 13个提测接口 -- 8 个测试通过， 3个阻塞，2个未测
+
+# 未提测接口： 直播列表 ，rpc 相关接口 8个左右， http接口： 2
+
+# 总体量： 50% 
+
+
+# 3月份修改的BUG数量：
+# 1. 
+# 已修改：
+
+# 服务端：
+#5678 -- 用户个人主页不显示年龄星座身高体重等信息
+#5509 -- 用户几天前，看粉丝数不对，从关注看了几个， 发现没有收到别人的取关提醒 
+#3954 -- 在参与话题时未选择同步到主页，过2天之后会在个人主页出现参与的话题内容
+#3722 -- 账号A发布一个话题，账号B参与话题，账号A删除话题，账号B在首页推荐，打开参与的话题，话题中的最新，热门列表不正确
+#5682 -- 话题问题，web后台进行置顶话题后，app中话题未置顶，实际话题已产生置顶标签
+#5716 -- web管理后台发布的feed不能定时发
+#4600 -- kizuna00 ，话题图片显示灰色，无法浏览
+#5553 -- 看自己的日志图片都是灰色的无法打开
+#5550 -- 用户日志显示发送失败，数美后台未拦截
+#5315 -- 在自己的主页查看日志图片和视频加载不出来
+#5588 -- 参与的话题回复的内容没有删除过但是没有了
+#4556 -- 用户现在等级没有到16级别，但是在主播的榜单里显示榜单隐身了
+
+# 技术能力： 介绍下你所知道的软件测试，测试用例的要素，测试用例设计方法 ， bug必要元素。介绍下你之前的实习工作的主要职责
+# 沟通能力： 你有一项工作，需要其他部门的同事一起完成，但他目前已经承担了本部门非常重的任务，他拒绝协助你，这时如何让他帮助你？
+# 抗压能力： 当你在工作中遇到较为困难的任务是，你会如何处理？
+# 学习能力： 只有一个 app 你会从那几个方面去处理。
+# 责任心： 如果你的学习与你现在的工作冲突，你会如何处理。
+# 待修改
+
+
+
+# /v1/live/gift/arPreReleaselist ---- 接口已通，但是发送ar礼物无效，感觉是key 有问题。
+# /v1/live/rank  -- 通过
+# v1/live/type-list -- 通过。（感觉废弃）
+# /v1/live/perm -- 通过
+# /v1/live/stop  -- 通过
+# v1/live/followingUsers -- 测试通过
+# v1/live/living-friends -- 测试通过
+# /v1/live/meta  -- 通过（感觉已废弃）
+
+
+# /v1/live/recommend-follow-with-type  -- 暂时未测
+# /v1/live/check-announcement-available  -- 接口已通，但后半部分接数美暂未完成
+# /v1/live/user-level  ---- 接口报错
+# /v1/live/user-level-setting ---- 阻塞
+# /v1/live/recommend-follow-anchors  -- 暂时未测
+
+# 直播列表   --- 未测试
+# rpc相关接口未测试
+# /create  -- 未测试
+# /detail-info -- 已上线
+
+
+
+# to do 自动化用例
+
+# pycharme  工具的 破解  或者 使用 eclipse 
+
+# 1. api smoke 用例 定义
+
+# 2. android 自动化测试 ui 重构 与 smoke 用例转为 框架支持的用例
+
+
+
+
+
+#   rpc GetLiveInfo(ILiveRequest) returns (ILiveInfoResponse) {} // 根据userId获取用户直播信息  -- fail , 调用报错  500
+
+# old ： 2020/04/23 16:27:15 error:  Illegal value for Message.Field .ILiveInfoResponse.id of type string: object (proto3 field without field presence cannot be null): -500
+# =============== GET getLiveInfoResponse Test:======================
+# res: <nil>
+
+# res: id:"88888106806610" text:"god \347\232\204\346\210\277\351\227\264\357\274\214\344\270\212\346\265\267\345\270\202" imageUrl:"http://static.rela.me/app/timeline/106806610/658a6b506d85eed61bf3ec6cfa3f2e82.jpg" count:1
+
+#   rpc GetTopFansOfWeek(IWeekTopFansRequest) returns (IWeekTopFansResponse) {} // 获取一周的守护榜  -- ok  -- 需要具体的验证下 数据
+
+# error 
+# old:
+# =============== GET GetTopFansOfWeek Test:======================
+# res: isAnchor:1
+# 新的返回 空：
+
+
+
+
+#   rpc GetIsUserInLandscape(ILiveRequest) returns (IGetIsUserInLandscapeResponse) {}  -- ok  是否横屏
+
+
+
+
+#   rpc GetLastestLiveInfoForUser(ILiveRequest) returns (IGetLiveInfoForUserResponse) {}  -- ok  主播最后开播时间
+
+
+# -------start test.....
+# -------conn test.....
+# 2020/04/23 17:32:44 error:  addr: pc-8vbl25i85y93w1ml9.mysql.polardb.zhangbei.rds.aliyuncs.com:3306, query SELECT stop_time, create_time, image_url FROM app_user_live WHERE user_id = ? ORDER BY create_time DESC LIMIT 1 args [106806610]: sql: Scan error on column index 0, name "stop_time": converting NULL to string is unsupported: -500
+# =============== GET getLastestLiveInfoForUser Test:======================
+# res: <nil>
+
+
+# # res: stopTime:1587630483
+
+
+
+# #   rpc GetTopFansOfPreferential(IWeekTopFansRequest) returns (IPreferentialTopFansResponse) {}   -- ok  需要详细验证下数据
+
+# old:
+# # res: isAnchor:1 data:<gold:7392 userId:106825430 > data:<gold:6399 userId:106703001 > data:<gold:4762 userId:106559880 > data:<gold:370 userId:106843071 > data:<gold:165 userId:100145919 > type:"all"
+# new：
+#   res: isAnchor:1 data:<gold:7395 userId:106825430 > data:<gold:6399 userId:106703001 > data:<gold:4762 userId:106559880 > data:<gold:370 userId:106843071 > data:<gold:165 userId:100145919 > type:"all"
+
+#   rpc GetLiveTabs(ILiveRequest) returns (IGetLiveTabsResponse) {} // 获取tabs列表   ---- ok 
+# res: 
+
+#   rpc GetCdnInfos(ILiveRequest) returns (IGetCdnResponse) {} // 获取直播cdn信息 
+
+
+########### OK ##############
+
+#   rpc GetAllRecommendUserIds(NullRequest) returns (ILiveResponse) {} // 获取所有推荐主播，读库。-- ok , 通过
+
+# res: userIds:5208 userIds:65768 userIds:122121
+
+
+#   rpc GetAllLivingUserIds(NullRequest) returns (ILiveResponse) {} // 正在直播的user信息, hotlives  --- ok,   # 正在直播
+
+# res: userIds:106806610
+ 
+
+#   rpc GetAllLivingUserIdWithFansCount(NullRequest) returns (ILivingUserWithFansCountResponse) {} // 获取主播id和观众人数  -- ok
+
+# res: data:<userId:106806610 count:1 >
+# res:
+
+#   rpc GetLivePerm(IGetLivePermRequest) returns (IGetLivePermResponse) {}  // 是否有直播权限。-- OK  
+
+# res:
+
+######  会员用户 查看过后， new标签不消失
+
+
+######  有一个新喜欢但是，isNewlikes 数据为 0
+
+######  ios 
+
+
+
+
+
+
+
+
+
+
+

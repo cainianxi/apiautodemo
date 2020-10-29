@@ -1,0 +1,130 @@
+group:
+    创建标签:
+        - 创建标签:
+            data:
+                key: ${${login}['data']['key']}
+                topicName: 哈哈哈哈哈
+                signature: $(signature($data))
+            assert:
+                json-json: {}
+    查找用户标签:
+        - 查找用户:
+            params:
+                key: ${${login}['data']['key']}
+                keyWord: 阿非
+                signature: $(signature($params))
+            assert:
+                json-json: {}
+        - 查找标签:
+            params:
+                key: ${${login}['data']['key']}
+                topicName: 测试测试
+                signature: $(signature($params))
+                curPage: 1
+                view_class: TLSearchViewController
+            assert:
+                json-json: {}
+    启动页加载:
+
+        - 配置:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: 
+                    code: 0
+#                schema: qdjz_schema.config_api
+        - 初始化数据:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"result": "1"}
+#                schema: qdjz_schema.init_api
+
+        - 我的信息:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: 
+                    code: 0
+#                schema: qdjz_schema.myinfo_api
+
+        - 推荐日志:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                mainType: moments
+                cursor: 0
+                limit: 20
+            assert:
+                json-json: {"code": 0}
+#                schema: qdjz_schema.moments_api
+
+        - 资源接口:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"code": 0}
+#                schema: qdjz_schema.zy_api
+
+        - 推荐话题:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                cursor: 0
+                limit: 20
+            assert:
+                json-json: {"code": 0}
+#                schema: qdjz_schema.theme_api
+
+        - 关注推荐:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+                cursor: 0
+                limit: 20
+            assert:
+                json-json: {"code": 0}
+#                schema: qdjz_schema.recommend_api
+
+        - 数据上报:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))  
+            assert:
+                json-json: {"result": "1"}
+
+        - ar礼物:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                appId: com.rela
+                view_class: RfSUniversalRouterRootViewController 
+            assert:
+                json-json: {"result": "1"}
+#                schema: qdjz_schema.arlist_api
+        - 黑名单用户:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"result": "1"}
+#                schema: qdjz_schema.black_api
+        - 我的关系:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"errdesc": "", "errcode": "", "result": "1"}
+
+scenario:
+    启动加载:
+        - 启动页加载
+    创建标签:
+        - 创建标签
+
+
+

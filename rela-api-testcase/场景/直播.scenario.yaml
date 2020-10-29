@@ -1,0 +1,275 @@
+
+group:
+    登录:
+        - 登录:
+            data:
+                cell: $login_cell
+                code: $code
+                signature: $(signature($data))
+            output: login  # 保存变量
+            assert:
+                json-json: 
+                    code: 0
+                    message: ""
+                    data:
+                        user: {"id": '$login_user_id'}
+    直播页面加载:
+
+        - ar礼物:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                appId: com.rela
+                view_class: RfSUniversalRouterRootViewController 
+            assert:
+                json-json: {"result": "1"}
+#                schema: qdjz_schema.arlist_api
+        - 榜单:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                view_class: RfSUniversalRouterRootViewController 
+            assert:
+                json-json: {"result": "1"}
+#                schema: live.rank_api
+        - 推荐列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: "0"
+                limit: 20
+                sort: "hot"
+                view_class: "RfSUniversalRouterRootViewController"
+            assert:
+                json-json: {"errdesc": "", "result": "1"}
+        - 直播列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: "0"
+                limit: 20
+                view_class: "RfSUniversalRouterRootViewController"
+            # assert:
+            #     json-json: 
+            #         data: {"cursor": "0"}
+        - 热聊列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: "0"
+                limit: 20
+                isMulti: 1
+                view_class: "RfSUniversalRouterRootViewController"
+            # assert:
+            #     json-json: 
+            #         data: {"cursor": "20"}
+        - 热聊列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                cursor: "0"
+                limit: 20
+                isMulti: 0
+                view_class: "RfSUniversalRouterRootViewController"
+
+        - 是否首次充值:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                from_class: RfSUniversalRouterRootViewController直播.scenario.yaml
+                view_class: TLLiveViewController  
+            assert:
+                json-json: {"errdesc": "","result": "1"}
+#                schema: my.first_change_api
+
+    创建直播间:
+        
+        - 直播权限:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                userId: $login_user_id 
+                view_class: TLLiveViewController 
+            assert:
+                json-json: 
+                    data: {"perm": 1}
+                    result: "1"
+        - 获取用户等级:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+            assert:
+                json-json: {"errcode": "", "errdesc": "", "result": "1"}
+#                schema: my.level_api
+
+        - 检查公告:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+                announcement: 工程师自动化测试
+            assert:
+                json-json: {"code": "0"}
+
+        - 创建直播:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+                view_class: "RfSUniversalRouterRootViewController"
+                text: $live_text
+                liveTypeId: 5
+                city: 上海
+                audioType: 0
+                appId: com.rela
+                announcement: $announcement
+                imageUrl: http://static.rela.me/app/live/106806610/3a1c065655e0e3fc739cda618220f018.jpg
+            # assert:
+            #     json-json: {"errdesc": "","result": "1"}
+        - 正在直播的朋友:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                view_class: "RfSUniversalRouterRootViewController"
+                from_class: RfSUniversalRouterRootViewController 
+            assert:
+                json-json: {"errdesc": "","result": "1"}
+
+        - 礼物列表:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                view_class: "RfSUniversalRouterRootViewController"
+                appId: "com.thel"
+            assert:
+                json-json: {"code": "0"}
+        - 礼物详情:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                id: 1
+                view_class: "RfSUniversalRouterRootViewController"
+                from_class: RfSUniversalRouterRootViewController 
+                appId: "com.thel"
+            assert:
+                json-json: {"code": "0"}
+
+        - 直播间榜单:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                limit: 50
+                type: today
+                from_class: RfSUniversalRouterRootViewController
+                view_class: TLLiveViewController
+                userId: $login_user_id
+            assert:
+                json-json: {"errdesc": "","result": "1"}
+
+        - 直播间榜单:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                limit: 50
+                type: week
+                from_class: RfSUniversalRouterRootViewController
+                view_class: TLLiveViewController
+                userId: $login_user_id
+            assert:
+                json-json: {"errdesc": "","result": "1"}
+
+        - 直播间榜单:
+            params:
+                key: ${${login}['data']['key']}
+                signature: $(signature($params))
+                limit: 50
+                type: month
+                from_class: RfSUniversalRouterRootViewController
+                view_class: TLLiveViewController
+                userId: $login_user_id
+            assert:
+                json-json: {"errdesc": "","result": "1"}
+
+        - 关闭直播:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+                from_class: RfSUniversalRouterRootViewController
+                view_class: TLLiveViewController
+            assert:
+                json-json:
+                    data: { "status": "OK"}
+                    result: "1"
+
+    加入直播间操作:
+
+        - 创建直播:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+                view_class: "RfSUniversalRouterRootViewController"
+                text: 工程师调试11
+                liveTypeId: 5
+                city: 上海
+                audioType: 0
+                appId: com.rela
+                announcement: 测试
+                imageUrl: http://static.rela.me/app/live/106806610/3a1c065655e0e3fc739cda618220f018.jpg
+            output: live_info
+            # assert:
+            #     json-json: {"errdesc": "","result": "1"}
+
+        - 登录:
+            data:
+                cell: $login_cell_join_live
+                code: $code
+                signature: $(signature($data))
+            output: join_live_login  # 保存变量
+            assert:
+                json-json: 
+                    code: 0
+                    message: ""
+                    data:
+                        user: {"id": '$login_user_id_join_live'}
+        - 加入直播间:
+            params:
+                key: ${${join_live_login}['data']['key']}
+                signature: $(signature($params))
+                from_class: RfSUniversalRouterRootViewController
+                view_class: TLLiveViewController
+                id: ${${live_info}['data']['id']}
+            assert:
+                json-json:
+                    data:
+                        id: ${${live_info}['data']['id']}
+
+        - 当日守护榜:
+            params:
+                key: ${${join_live_login}['data']['key']}
+                signature: $(signature($params))
+                cursor: "0"
+                userId: $login_user_id
+            assert:
+                json-json: {"errdesc": "","result": "1"}
+
+        - 关闭直播:
+            data:
+                key: ${${login}['data']['key']}
+                signature: $(signature($data))
+                from_class: RfSUniversalRouterRootViewController
+                view_class: TLLiveViewController
+            assert:
+                json-json:
+                    data: { "status": "OK"}
+                    result: "1"
+scenario:
+    直播tab加载:
+        - 直播页面加载
+
+    创建直播间:
+        - 创建直播间
+
+    加入直播间:
+        - 加入直播间操作
+
+
+
+    
