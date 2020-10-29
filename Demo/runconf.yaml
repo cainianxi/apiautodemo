@@ -1,0 +1,24 @@
+# APP, APP_H5, WEB
+
+type: app
+devices:
+# # app
+#     device: ""
+#        - 192.168.3.157
+    apkname: com.thel 
+# WEB
+#    device:
+#        chrome: "C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe"
+
+
+# 日志目录
+logpath: "./log/"
+# 错误截图
+imgpath: "./IMAGE/"
+
+email_info:
+    smtp_server: smtp.163.com
+    from_mail: 13770787440@163.com
+    mail_pass: 10086qwer
+    to_mail: ["1239559919@qq.com"]
+    port: 25

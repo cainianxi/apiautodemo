@@ -1,0 +1,35 @@
+#图谱采集:
+#    正常采集:
+#        - 切换到云病例:
+#        - 患者图谱采集:
+#              data:
+#                  edipwd: "nlxd"
+
+验证预约者是否成功:
+    验证已存在:
+        - 切换到云病例:
+        - 创建预约者信息:
+            data:
+                etsourceno: "516883954"
+                etpatname: "榴芒"
+                etnation: "鄂伦春族"
+                etcardnum: "141022196609058905"
+                etcardno: "4940988036777721"
+                etphone: "13024402096"
+                etcheckpro: "心血管MRI"
+                etmdical: "ada飞飞飞灌灌灌灌"
+                etchief: "测试一下framework"
+                etclinical: "android framwork层测试，nativeapp"
+
+
+        - 切换至待检查页面:
+            assert:
+                except: ["榴芒", "李想", "丁建国"]
+#
+#
+#
+#    验证不存在:
+#        - 切换到云病例:
+##        - 创建预约者信息:
+#        - 切换至待检查页面:
+#              except: ["龙小珑"]

@@ -1,0 +1,8 @@
+注册配置中心:
+    配置操作:
+        - 设置工程师密钥:
+              data:
+                  etpwd: "nlxd"
+                  etqpwd: "123456"
+              assert:
+                  excepts: ['激活成功，感谢您的使用']

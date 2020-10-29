@@ -1,0 +1,9 @@
+setup:
+  - 登录:
+      data:
+        qh_code: 99
+        cell: 19999999163
+        code: 9999
+
+teardown:
+  - 退出登录:
